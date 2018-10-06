@@ -7,4 +7,5 @@ class Creature < ApplicationRecord
   has_and_belongs_to_many :damage_vulnerabilities
   has_and_belongs_to_many :damage_resistances
   has_and_belongs_to_many :condition_immunities
+  has_and_belongs_to_many :languages
 end
