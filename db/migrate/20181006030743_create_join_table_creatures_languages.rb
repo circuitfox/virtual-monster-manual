@@ -1,8 +1,8 @@
 class CreateJoinTableCreaturesLanguages < ActiveRecord::Migration[5.2]
   def change
     create_join_table :creatures, :languages do |t|
-      # t.index [:creature_id, :language_id]
-      # t.index [:language_id, :creature_id]
+      t.references :creature, foreign_key: true
+      t.references :language, foreign_key: true
     end
   end
 end

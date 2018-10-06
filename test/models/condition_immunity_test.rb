@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ConditioniImmunityTest < ActiveSupport::TestCase
+class ConditionImmunityTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
