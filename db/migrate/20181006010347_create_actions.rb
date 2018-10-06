@@ -5,7 +5,7 @@ class CreateActions < ActiveRecord::Migration[5.2]
       t.string :damage_dice, null: false
       t.string :name, null: false
       t.text :description, null: false
-      t.int :range, null: false
+      t.integer :range, null: false
 
       t.timestamps
     end

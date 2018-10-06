@@ -4,7 +4,7 @@ class CreateSpells < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.text :description, null: false
       t.string :dice, null: false
-      t.int :level, null: false
+      t.integer :level, null: false
 
       t.timestamps
     end
