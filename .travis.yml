@@ -1,0 +1,6 @@
+language: ruby
+env:
+    RAILS_ENV=test
+script:
+    bin/rake db:setup
+    bin/rake
