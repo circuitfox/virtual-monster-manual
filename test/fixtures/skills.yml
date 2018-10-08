@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  creature: 
+  name: MyString
+  bonus: 
+
+two:
+  creature: 
+  name: MyString
+  bonus: 
