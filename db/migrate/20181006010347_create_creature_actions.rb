@@ -1,6 +1,6 @@
-class CreateActions < ActiveRecord::Migration[5.2]
+class CreateCreatureActions < ActiveRecord::Migration[5.2]
   def change
-    create_table :actions do |t|
+    create_table :creature_actions do |t|
       t.belongs_to :creature, foreign_key: true
       t.string :damage_dice, null: false
       t.string :name, null: false
