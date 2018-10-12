@@ -1,0 +1,44 @@
+<%= form_with(model: creature_action, local: true) do |form| %>
+  <% if creature_action.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(creature_action.errors.count, "error") %> prohibited this creature_action from being saved:</h2>
+
+      <ul>
+      <% creature_action.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!-- form.htmlField : variableName -->
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :creature_id, "Creature" %>
+    <%= form.collection_select(:creature_id, Creature.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :damage_dice %>
+    <%= form.text_field :damage_dice, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :range %>
+    <%= form.number_field :range, required: true %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+    <h2><%= @creature_action.name%> (<%= @creature_action.creature.name%>)</h2>
+    <p>
+      Damage Dice: <%= @creature_action.damage_dice %>
+    </p>
+
+    <p>
+      Range: <%= @creature_action.range %>
+    </p>
+
+    <p>
+      Description: <%= @creature_action.description %>
+    </p>
+
+
+<%= link_to 'Edit', edit_creature_action_path(@creature_action) %> |
+<%= link_to 'Back', creature_actions_path %>
