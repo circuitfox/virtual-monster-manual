@@ -1,0 +1,177 @@
+<%= form_with(model: creature, local: true) do |form| %>
+  <% if creature.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(creature.errors.count, "error") %> prohibited this creature from being saved:</h2>
+
+      <ul>
+      <% creature.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.select :type, creature_types, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subtype %>
+    <%= form.text_field :subtype %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.select :size, creature_sizes, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :alignment %>
+    <%= form.text_field :alignment, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ac %>
+    <%= form.text_field :ac, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ac_type %>
+    <%= form.text_field :ac_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hp %>
+    <%= form.number_field :hp, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hp_dice %>
+    <%= form.text_field :hp_dice, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :speed %>
+    <%= form.number_field :speed, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :swim %>
+    <%= form.number_field :swim, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :burrow %>
+    <%= form.number_field :burrow, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :climb %>
+    <%= form.number_field :climb, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fly %>
+    <%= form.number_field :fly, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :strength %>
+    <%= form.number_field :strength, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dexterity %>
+    <%= form.number_field :dexterity, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :constitution %>
+    <%= form.number_field :constitution, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :intellect %>
+    <%= form.number_field :intellect, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wisdom %>
+    <%= form.number_field :wisdom, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :charisma %>
+    <%= form.number_field :charisma, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :str_saving %>
+    <%= form.number_field :str_saving, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dex_saving %>
+    <%= form.number_field :dex_saving, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :con_saving %>
+    <%= form.number_field :con_saving, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :int_saving %>
+    <%= form.number_field :int_saving, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wis_saving %>
+    <%= form.number_field :wis_saving, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :chr_saving %>
+    <%= form.number_field :chr_saving, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :perception %>
+    <%= form.number_field :perception, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :blindsight %>
+    <%= form.number_field :blindsight, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :darkvision %>
+    <%= form.number_field :darkvision, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tremorsense %>
+    <%= form.number_field :tremorsense, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :truesight %>
+    <%= form.number_field :truesight, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :challenge %>
+    <%= form.number_field :challenge, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

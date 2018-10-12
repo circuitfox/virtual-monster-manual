@@ -1,0 +1,92 @@
+<p id="notice"><%= notice %></p>
+<h2><%= @creature.name %></h2>
+<h3>
+  <%= @creature.size.humanize %>
+  <% if @creature.subtype? %>
+    <%= @creature.type.humanize %> (<%= @creature.subtype %>),
+  <% else %>
+    <%= @creature.type.humanize %>,
+  <% end %>
+  <%= @creature.alignment %>
+</h3>
+<p>
+  AC: <%= @creature.ac %>
+  <% if @creature.ac_type? %>
+    (<%= @creature.ac_type %>)
+  <% end %>
+</p>
+<p>HP: <%= @creature.hp %> (<%= @creature.hp_dice %>)</p>
+<p>Speed: <%= @creature.speed %>ft.</p>
+<% if @creature.swim != 0 %>
+  <p>Swim: <%= @creature.swim %>ft.</p>
+<% end %>
+<% if @creature.burrow? %>
+  <p>Burrow: <%= @creature.burrow %>ft.</p>
+<% end %>
+<% if @creature.climb? %>
+  <p>Climb: <%= @creature.climb %>ft.</p>
+<% end %>
+<% if @creature.fly? %>
+  <p>Fly: <%= @creature.fly %>ft.</p>
+<% end %>
+<h4>Stats</h4>
+<table class="stats">
+  <thead>
+    <th>Str</th>
+    <th>Dex</th>
+    <th>Con</th>
+    <th>Int</th>
+    <th>Wis</th>
+    <th>Chr</th>
+  </thead>
+  <tbody>
+    <td><%= @creature.strength %></td>
+    <td><%= @creature.dexterity %></td>
+    <td><%= @creature.constitution %></td>
+    <td><%= @creature.intellect %></td>
+    <td><%= @creature.wisdom %></td>
+    <td><%= @creature.charisma %></td>
+  </tbody>
+</table>
+<% if @creature.saving_throws? %>
+<h4>Saving Throws</h4>
+<p>
+  <% if @creature.str_saving? %>
+    Str +<%= @creature.str_saving %>
+  <% end %>
+  <% if @creature.dex_saving? %>
+    Dex +<%= @creature.dex_saving %>
+  <% end %>
+  <% if @creature.con_saving? %>
+    Con +<%= @creature.con_saving %>
+  <% end %>
+  <% if @creature.int_saving? %>
+    Int +<%= @creature.int_saving %>
+  <% end %>
+  <% if @creature.wis_saving? %>
+    Wis +<%= @creature.wis_saving %>
+  <% end %>
+  <% if @creature.chr_saving? %>
+    Chr +<%= @creature.chr_saving %>
+  <% end %>
+</p>
+<% end %>
+<p>
+  Senses: passive Perception: <%= @creature.perception %>
+  <% if @creature.blindsight? %>
+    blindsight: <%= @creature.blindsight %>ft.
+  <% end %>
+  <% if @creature.darkvision? %>
+    darkvision: <%= @creature.darkvision %>ft.
+  <% end %>
+  <% if @creature.tremorsense? %>
+    tremorsense: <%= @creature.tremorsense %>ft.
+  <% end %>
+  <% if @creature.truesight? %>
+    truesight: <%= @creature.truesight %>ft.
+  <% end %>
+</p>
+<p>Challenge: <%= @creature.challenge %> XP</p>
+
+<%= link_to 'Edit', edit_creature_path(@creature) %> |
+<%= link_to 'Back', creatures_path %>

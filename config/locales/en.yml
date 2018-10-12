@@ -30,4 +30,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      creature:
+        ac: AC
+        ac_type: AC type
+        hp: HP
+        hp_dice: HP dice
+        str_saving: Strength saving throw
+        dex_saving: Dexterity saving throw
+        con_saving: Constitution saving throw
+        int_saving: Intellect saving throw
+        wis_saving: Wisdom saving throw
+        chr_saving: Charisma saving throw
