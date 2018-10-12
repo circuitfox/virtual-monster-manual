@@ -60,29 +60,29 @@ ActiveRecord::Schema.define(version: 2018_10_06_030743) do
     t.string "ac_type"
     t.integer "hp", null: false
     t.string "hp_dice", null: false
-    t.integer "speed", null: false
-    t.integer "swim", null: false
-    t.integer "burrow", null: false
-    t.integer "climb", null: false
-    t.integer "fly", null: false
-    t.integer "strength", null: false
-    t.integer "dexterity", null: false
-    t.integer "constitution", null: false
-    t.integer "intelligence", null: false
-    t.integer "wisdom", null: false
-    t.integer "charisma", null: false
-    t.integer "str_saving", null: false
-    t.integer "dex_saving", null: false
-    t.integer "con_saving", null: false
-    t.integer "int_saving", null: false
-    t.integer "wis_saving", null: false
-    t.integer "chr_asving", null: false
-    t.integer "perception", null: false
-    t.integer "blindsight", null: false
-    t.integer "darkvision", null: false
-    t.integer "tremorsense", null: false
-    t.integer "truesight", null: false
-    t.integer "challenge", null: false
+    t.integer "speed", default: 0, null: false
+    t.integer "swim", default: 0, null: false
+    t.integer "burrow", default: 0, null: false
+    t.integer "climb", default: 0, null: false
+    t.integer "fly", default: 0, null: false
+    t.integer "strength", default: 0, null: false
+    t.integer "dexterity", default: 0, null: false
+    t.integer "constitution", default: 0, null: false
+    t.integer "intellect", default: 0, null: false
+    t.integer "wisdom", default: 0, null: false
+    t.integer "charisma", default: 0, null: false
+    t.integer "str_saving", default: 0, null: false
+    t.integer "dex_saving", default: 0, null: false
+    t.integer "con_saving", default: 0, null: false
+    t.integer "int_saving", default: 0, null: false
+    t.integer "wis_saving", default: 0, null: false
+    t.integer "chr_saving", default: 0, null: false
+    t.integer "perception", default: 0, null: false
+    t.integer "blindsight", default: 0, null: false
+    t.integer "darkvision", default: 0, null: false
+    t.integer "tremorsense", default: 0, null: false
+    t.integer "truesight", default: 0, null: false
+    t.integer "challenge", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
