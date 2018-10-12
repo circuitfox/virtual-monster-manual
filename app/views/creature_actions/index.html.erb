@@ -13,7 +13,7 @@
   <tbody>
     <% @creature_actions.each do |creature_action| %>
       <tr>
-        <td><%= creature_actions.name %></td>
+        <td><%= creature_action.name %></td>
         <td><%= link_to 'Show', creature_action %></td>
         <td><%= link_to 'Edit', edit_creature_action_path(creature_action) %></td>
         <td><%= link_to 'Destroy', creature_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>

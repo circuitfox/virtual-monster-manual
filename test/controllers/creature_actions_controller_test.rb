@@ -17,7 +17,7 @@ class CreatureActionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create creature_action" do
     assert_difference('CreatureAction.count') do
-      zombie = @creature_action.creature.id
+      zombie = creatures(:zombie)
       post creature_actions_url, params: { creature_action: {
         creature_id: zombie.id,
         name: "talon",

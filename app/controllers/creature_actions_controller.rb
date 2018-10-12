@@ -69,6 +69,6 @@ class CreatureActionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def creature_action_params
-      params.require(:creature_action).permit(:name, :damage_dice, :description, :range )
+      params.require(:creature_action).permit(:creature_id, :name, :damage_dice, :description, :range )
     end
 end

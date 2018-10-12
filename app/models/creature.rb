@@ -3,8 +3,8 @@ class Creature < ApplicationRecord
   # column so we need to give it another name
   self.inheritance_column = 'inheritance_type'
 
-  has_many :creature_actions
-  has_many :skills
+  has_many :creature_actions, dependent: :destroy
+  has_many :skills, dependent: :destroy
   has_and_belongs_to_many :abilities
   has_and_belongs_to_many :spells
   has_and_belongs_to_many :damage_immunities
