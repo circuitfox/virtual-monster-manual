@@ -17,7 +17,14 @@ class CreatureActionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create creature_action" do
     assert_difference('CreatureAction.count') do
-      post creature_actions_url, params: { creature_action: {  } }
+      zombie = @creature_action.creature.id
+      post creature_actions_url, params: { creature_action: {
+        creature_id: zombie.id,
+        name: "talon",
+        description: "this is a thing",
+        damage_dice: "1d4",
+        range: 5
+      } }
     end
 
     assert_redirected_to creature_action_url(CreatureAction.last)
@@ -34,7 +41,7 @@ class CreatureActionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update creature_action" do
-    patch creature_action_url(@creature_action), params: { creature_action: {  } }
+    patch creature_action_url(@creature_action), params: { creature_action: { name: "bite" } }
     assert_redirected_to creature_action_url(@creature_action)
   end
 
