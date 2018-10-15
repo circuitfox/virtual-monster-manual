@@ -1,0 +1,84 @@
+@import "variables";
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  background-color: $bg-color;
+}
+
+nav {
+  overflow: hidden;
+  background-color: $nav-color;
+  color: $nav-text;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  list-style: none;
+}
+
+nav li {
+  text-align: center;
+  display: block;
+  color: inherit;
+
+  &:first-child a {
+    padding-left: 30px;
+  }
+
+  &:last-child a {
+    padding-right: 30px;
+  }
+
+  a {
+    color: inherit;
+    padding: 20px;
+    text-decoration: none;
+
+    &:hover {
+      color: inherit;
+      background-color: lighten($nav-color, 10%);
+    }
+
+    &:active {
+      color: inherit;
+      background-color: darken($nav-color, 10%);
+    }
+
+    &:visited {
+      color: inherit;
+    }
+  }
+}
+
+.push-right {
+  margin-left: auto;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 10px;
+  margin-top: 50px;
+  background-color: $main-color;
+  max-width: 960px;
+  min-height: 100%;
+}
