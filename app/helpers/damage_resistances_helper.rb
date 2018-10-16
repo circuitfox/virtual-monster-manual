@@ -1,0 +1,2 @@
+module DamageResistancesHelper
+end
