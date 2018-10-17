@@ -4,10 +4,10 @@ example:
   name: example
   email: example@example.com
   admin: false
-  password_digest: password
+  password_digest: <%= BCrypt::Password.create("password") %>
 
 admin:
   name: admin
   email: admin@example.com
   admin: true
-  password_digest: password
+  password_digest: <%= BCrypt::Password.create("password") %>
