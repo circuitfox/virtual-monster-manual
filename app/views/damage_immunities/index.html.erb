@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Damage Immunities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @damage_immunities.each do |damage_immunity| %>
+      <tr>
+        <td><%= damage_immunity.name %></td>
+        <td><%= link_to 'Show', damage_immunity %></td>
+        <td><%= link_to 'Edit', edit_damage_immunity_path(damage_immunity) %></td>
+        <td><%= link_to 'Destroy', damage_immunity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Damage Immunity', new_damage_immunity_path %>
