@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :condition_immunities
+  
   root "creatures#index"
 
   get "signup", to: "users#new", as: "signup"
@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   
+  resources :condition_immunities
   resources :damage_immunities
   resources :damage_resistances
   resources :creature_actions
