@@ -1,0 +1,22 @@
+<%= form_with(model: damage_vulnerability, local: true) do |form| %>
+  <% if damage_vulnerability.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(damage_vulnerability.errors.count, "error") %> prohibited this damage_vulnerability from being saved:</h2>
+
+      <ul>
+      <% damage_vulnerability.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name%>
+    <%= form.text_field :name, required: true%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Damage Vulnerabilities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @damage_vulnerabilities.each do |damage_vulnerability| %>
+      <tr>
+        <td><%= damage_vulnerability.name %></td>
+        <td><%= link_to 'Show', damage_vulnerability %></td>
+        <td><%= link_to 'Edit', edit_damage_vulnerability_path(damage_vulnerability) %></td>
+        <td><%= link_to 'Destroy', damage_vulnerability, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Damage Vulnerability', new_damage_vulnerability_path %>
