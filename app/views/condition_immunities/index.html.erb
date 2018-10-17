@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Condition Immunities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th> Name </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @condition_immunities.each do |condition_immunity| %>
+      <tr>
+        <td><%= condition_immunity.name %></td>
+        <td><%= link_to 'Show', condition_immunity %></td>
+        <td><%= link_to 'Edit', edit_condition_immunity_path(condition_immunity) %></td>
+        <td><%= link_to 'Destroy', condition_immunity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Condition Immunity', new_condition_immunity_path %>
