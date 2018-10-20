@@ -5,7 +5,7 @@ class Creature < ApplicationRecord
 
   has_many :creature_actions, dependent: :destroy
   has_many :skills, dependent: :destroy
-  has_and_belongs_to_many :abilities
+  has_many :abilities, dependent: :destroy
   has_and_belongs_to_many :spells
   has_and_belongs_to_many :damage_immunities
   has_and_belongs_to_many :damage_vulnerabilities

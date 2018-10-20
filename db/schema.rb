@@ -13,17 +13,12 @@
 ActiveRecord::Schema.define(version: 2018_10_15_155755) do
 
   create_table "abilities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "creature_id"
     t.string "name", null: false
     t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "abilities_creatures", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "creature_id"
-    t.bigint "ability_id"
-    t.index ["ability_id"], name: "index_abilities_creatures_on_ability_id"
-    t.index ["creature_id"], name: "index_abilities_creatures_on_creature_id"
+    t.index ["creature_id"], name: "index_abilities_on_creature_id"
   end
 
   create_table "condition_immunities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -173,8 +168,7 @@ ActiveRecord::Schema.define(version: 2018_10_15_155755) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "abilities_creatures", "abilities"
-  add_foreign_key "abilities_creatures", "creatures"
+  add_foreign_key "abilities", "creatures"
   add_foreign_key "condition_immunities_creatures", "condition_immunities"
   add_foreign_key "condition_immunities_creatures", "creatures"
   add_foreign_key "creature_actions", "creatures"
