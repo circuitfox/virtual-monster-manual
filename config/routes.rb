@@ -7,12 +7,13 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
-  resources :damage_vulnerabilities
+  resources :abilities
   resources :condition_immunities
+  resources :creatures
+  resources :creature_actions
   resources :damage_immunities
   resources :damage_resistances
-  resources :creature_actions
-  resources :creatures
+  resources :damage_vulnerabilities
   resources :languages
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
