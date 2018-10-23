@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 *, *:before, *:after {
   box-sizing: inherit;
@@ -52,7 +53,6 @@ nav li {
     color: inherit;
     padding: 20px;
     text-decoration: none;
-
     &:hover {
       color: inherit;
       background-color: lighten($nav-color, 10%);
@@ -81,4 +81,32 @@ main {
   background-color: $main-color;
   max-width: 960px;
   min-height: 100%;
+}
+
+input {
+  &[type=button], &[type=submit], &[type=reset] {
+    @include button($nav-color);
+    color: $nav-text;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  &:not([type=submit]):not([type=reset]):not([type=button]):not([type=file]) {
+    @include text-input($main-color, $nav-color);
+  }
+}
+
+select {
+  @include text-input($main-color, $nav-color);
+}
+
+div.field {
+  label {
+    display: block;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
 }
