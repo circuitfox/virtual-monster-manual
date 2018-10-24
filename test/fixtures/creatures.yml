@@ -21,12 +21,12 @@ zombie:
   intellect: 3
   wisdom: 6
   charisma: 5
-  str_saving: 0
-  dex_saving: 0
-  con_saving: 0
-  int_saving: 0
+  str_saving:
+  dex_saving:
+  con_saving:
+  int_saving:
   wis_saving: 0
-  chr_saving: 0
+  chr_saving:
   perception: 8
   blindsight: 0
   darkvision: 60

@@ -31,11 +31,11 @@ class Creature < ApplicationRecord
     :undead], _prefix: :type
 
     def saving_throws?
-      self.str_saving != 0 ||
-        self.dex_saving != 0 ||
-        self.con_saving != 0 ||
-        self.int_saving != 0 ||
-        self.wis_saving != 0 ||
-        self.chr_saving != 0
+      !self.str_saving.nil? ||
+        !self.dex_saving.nil? ||
+        !self.con_saving.nil? ||
+        !self.int_saving.nil? ||
+        !self.wis_saving.nil? ||
+        !self.chr_saving.nil?
     end
 end
