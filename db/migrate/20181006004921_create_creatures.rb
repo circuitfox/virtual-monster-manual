@@ -21,12 +21,12 @@ class CreateCreatures < ActiveRecord::Migration[5.2]
       t.integer :intellect, null: false, default: 0
       t.integer :wisdom, null: false, default: 0
       t.integer :charisma, null: false, default: 0
-      t.integer :str_saving, null: false, default: 0
-      t.integer :dex_saving, null: false, default: 0
-      t.integer :con_saving, null: false, default: 0
-      t.integer :int_saving, null: false, default: 0
-      t.integer :wis_saving, null: false, default: 0
-      t.integer :chr_saving, null: false, default: 0
+      t.integer :str_saving
+      t.integer :dex_saving
+      t.integer :con_saving
+      t.integer :int_saving
+      t.integer :wis_saving
+      t.integer :chr_saving
       t.integer :perception, null: false, default: 0
       t.integer :blindsight, null: false, default: 0
       t.integer :darkvision, null: false, default: 0

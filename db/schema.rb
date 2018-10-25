@@ -66,12 +66,12 @@ ActiveRecord::Schema.define(version: 2018_10_15_155755) do
     t.integer "intellect", default: 0, null: false
     t.integer "wisdom", default: 0, null: false
     t.integer "charisma", default: 0, null: false
-    t.integer "str_saving", default: 0, null: false
-    t.integer "dex_saving", default: 0, null: false
-    t.integer "con_saving", default: 0, null: false
-    t.integer "int_saving", default: 0, null: false
-    t.integer "wis_saving", default: 0, null: false
-    t.integer "chr_saving", default: 0, null: false
+    t.integer "str_saving"
+    t.integer "dex_saving"
+    t.integer "con_saving"
+    t.integer "int_saving"
+    t.integer "wis_saving"
+    t.integer "chr_saving"
     t.integer "perception", default: 0, null: false
     t.integer "blindsight", default: 0, null: false
     t.integer "darkvision", default: 0, null: false
