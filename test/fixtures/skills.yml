@@ -1,2 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-skills:(name: perception)
+perception:
+  creature: zombie
+  name: Perception
+  bonus: 7
