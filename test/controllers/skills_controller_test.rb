@@ -2,7 +2,8 @@ require 'test_helper'
 
 class SkillsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @skill = skills(:one)
+    @skill = skills(:perception)
+    @creature = creatures(:zombie)
   end
 
   test "should get index" do
@@ -16,8 +17,8 @@ class SkillsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create skill" do
-    assert_difference('Skill.count') do
-      post skills_url, params: { skill: {  } }
+  assert_difference('Skill.count') do
+      post skills_url, params: { skill: { name:"Stealth", creature_id: @creature.id, bonus: 7 } }
     end
 
     assert_redirected_to skill_url(Skill.last)
@@ -34,7 +35,7 @@ class SkillsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update skill" do
-    patch skill_url(@skill), params: { skill: {  } }
+    patch skill_url(@skill), params: { skill: { name:"Perception" } }
     assert_redirected_to skill_url(@skill)
   end
 
