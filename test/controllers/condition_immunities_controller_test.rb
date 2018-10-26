@@ -17,7 +17,7 @@ class ConditionImmunitiesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create condition_immunity" do
     assert_difference('ConditionImmunity.count') do
-      post condition_immunities_url, params: { condition_immunity: { name: "charmed" } }
+      post condition_immunities_url, params: { condition_immunity: { name: "frightened" } }
     end
 
     assert_redirected_to condition_immunity_url(ConditionImmunity.last)
@@ -34,7 +34,7 @@ class ConditionImmunitiesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update condition_immunity" do
-    patch condition_immunity_url(@condition_immunity), params: { condition_immunity: { name: "loved" } }
+    patch condition_immunity_url(@condition_immunity), params: { condition_immunity: { name: "exhaustion" } }
     assert_redirected_to condition_immunity_url(@condition_immunity)
   end
 
