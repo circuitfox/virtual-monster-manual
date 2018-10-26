@@ -1,0 +1,32 @@
+<%= form_with(model: skill, local: true) do |form| %>
+  <% if skill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(skill.errors.count, "error") %> prohibited this skill from being saved:</h2>
+
+      <ul>
+      <% skill.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+   <%= form.label :creature_id, "Creature" %>
+   <%= form.collection_select(:creature_id, Creature.all, :id, :name) %>
+ </div>
+
+ <div class="field">
+   <%= form.label :name %>
+   <%= form.text_field :name, required: true %>
+ </div>
+
+ <div class="field">
+   <%= form.label :bonus %>
+   <%= form.number_field :bonus, required: true %>
+ </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
