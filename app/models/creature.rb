@@ -13,6 +13,17 @@ class Creature < ApplicationRecord
   has_and_belongs_to_many :condition_immunities
   has_and_belongs_to_many :languages
 
+  #validations here, with itself
+  validates :name, :type, :size, :alignment, presence: true
+  validates :ac, :hp, :speed, :swim, :burrow, :climb, :fly, :strength,
+    :dexterity, :constitution, :intellect, :wisdom, :charisma, :perception,
+    :blindsight, :darkvision, :tremorsense, :truesight, :challenge, presence: true, 
+    numericality: { only_integer: true }
+  validates :hp_dice, format: { with: /\A\d+d\d+\ ?(\+|-)\ ?\d+|\d+d\d+\Z/, 
+    message:"Dice should be in form 1d4 + 8" }
+  validates :str_saving, :dex_saving, :con_saving, :int_saving, 
+    :wis_saving, :chr_saving, numericality: { only_integer: true, allow_nil: true }
+
   enum size: [:tiny, :small, :medium, :large, :huge, :gargantuan], _prefix: :size
   enum type: [
     :abberation,

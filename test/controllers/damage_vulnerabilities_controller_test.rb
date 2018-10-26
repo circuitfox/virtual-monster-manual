@@ -17,7 +17,7 @@ class DamageVulnerabilitiesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create damage_vulnerability" do
     assert_difference('DamageVulnerability.count') do
-      post damage_vulnerabilities_url, params: { damage_vulnerability: { name: "slashing" } }
+      post damage_vulnerabilities_url, params: { damage_vulnerability: { name: "pircing" } }
     end
 
     assert_redirected_to damage_vulnerability_url(DamageVulnerability.last)

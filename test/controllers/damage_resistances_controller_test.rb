@@ -17,7 +17,7 @@ class DamageResistancesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create damage_resistance" do
     assert_difference('DamageResistance.count') do
-      post damage_resistances_url, params: { damage_resistance: { name: "slashing" } }
+      post damage_resistances_url, params: { damage_resistance: { name: "pircing" } }
     end
 
     assert_redirected_to damage_resistance_url(DamageResistance.last)
