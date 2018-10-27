@@ -19,8 +19,7 @@ class Creature < ApplicationRecord
     :dexterity, :constitution, :intellect, :wisdom, :charisma, :perception,
     :blindsight, :darkvision, :tremorsense, :truesight, :challenge, presence: true, 
     numericality: { only_integer: true }
-  validates :hp_dice, format: { with: /\A\d+d\d+\ ?(\+|-)\ ?\d+|\d+d\d+\Z/, 
-    message:"Dice should be in form 1d4 + 8" }
+  validates :hp_dice, dice: { message: "Dice should be in form 1d4 + 8" }
   validates :str_saving, :dex_saving, :con_saving, :int_saving, 
     :wis_saving, :chr_saving, numericality: { only_integer: true, allow_nil: true }
 
