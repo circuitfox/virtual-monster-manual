@@ -15,6 +15,12 @@
         <li><%= link_to "Virtual Monster Manual", "/" %></li>
         <li><%= link_to "Creatures", creatures_path %></li>
         <li><%= link_to "Actions", creature_actions_path %></li>
+        <li><%= form_with url: search_config[:path] do |form| %>
+          <div class="addon-container">
+            <%= search_field_tag "query", nil, placeholder: search_config[:placeholder], class: "addon-field" %>
+            <%= form.submit "Go", class: "addon-item" %>
+          </div>
+        <% end %></li>
         <!-- TODO: User model state stuff here -->
         <% if current_user %>
           <li class="push-right"><%= link_to current_user.name, current_user %></li>
