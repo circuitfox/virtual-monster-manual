@@ -1,6 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :current_user, :logged_in?, :admin?
+  helper_method :current_user, :logged_in?, :admin?, :search_path
+
+  protected
+    def search_path
+      "/search"
+    end
 
   private
     def current_user

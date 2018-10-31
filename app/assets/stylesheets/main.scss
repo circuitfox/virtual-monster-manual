@@ -27,6 +27,17 @@ nav {
   width: 100%;
 }
 
+nav input {
+  &[type=button], &[type=submit], &[type=reset] {
+    @include button(darken($main-color, 5));
+    color: $nav-text;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+}
+
 nav ul {
   display: flex;
   align-items: center;
@@ -69,10 +80,6 @@ nav li {
   }
 }
 
-.push-right {
-  margin-left: auto;
-}
-
 main {
   margin-left: auto;
   margin-right: auto;
@@ -83,7 +90,7 @@ main {
   min-height: 100%;
 }
 
-input {
+input.field {
   &[type=button], &[type=submit], &[type=reset] {
     @include button($nav-color);
     color: $nav-text;
@@ -99,7 +106,7 @@ input {
   }
 }
 
-select {
+select.field {
   @include text-input($main-color, $nav-color);
 }
 
@@ -109,4 +116,33 @@ div.field {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
   }
+}
+
+.addon-container {
+  display: flex;
+
+  & .addon-field:first-child, .addon-item:first-child {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right: none
+  }
+
+  & .addon-field:last-child, .addon-item:last-child {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: none
+  }
+}
+
+.addon-field {
+  @include text-input($main-color, $nav-color);
+  flex: 1;
+}
+
+.addon-item {
+  border: 1px solid $nav-color;
+}
+
+.push-right {
+  margin-left: auto;
 }
