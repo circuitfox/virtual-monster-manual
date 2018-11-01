@@ -56,114 +56,114 @@
     <%= form.text_field :hp_dice, required: true %>
   </div>
 
-  <div class="field">
-    <%= form.label :speed %>
-    <%= form.number_field :speed, required: true %>
+  <h3>Speed</h3>
+
+  <div class="fields-horizontal">
+    <div class="field-item flex-10">
+      <%= form.label :speed %>
+      <%= form.number_field :speed, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :swim %>
+      <%= form.number_field :swim, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :burrow %>
+      <%= form.number_field :burrow, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :climb %>
+      <%= form.number_field :climb, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :fly %>
+      <%= form.number_field :fly, required: true %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :swim %>
-    <%= form.number_field :swim, required: true %>
+  <h3>Stats</h3>
+
+  <div class="fields-horizontal">
+    <div class="field-item flex-10">
+      <%= form.label :strength %>
+      <%= form.number_field :strength, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :dexterity %>
+      <%= form.number_field :dexterity, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :constitution %>
+      <%= form.number_field :constitution, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :intellect %>
+      <%= form.number_field :intellect, required: true %>
+    </div>
+
+    <div class="field-item flex-10">
+      <%= form.label :wisdom %>
+      <%= form.number_field :wisdom, required: true %>
+    </div>
+
+    <div class="field-item flex-10">
+      <%= form.label :charisma %>
+      <%= form.number_field :charisma, required: true %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :burrow %>
-    <%= form.number_field :burrow, required: true %>
+  <h3>Saving Throws</h3>
+
+  <div class="fields-horizontal">
+    <div class="field-item flex-10">
+      <%= form.label :str_saving %>
+      <%= form.number_field :str_saving, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :dex_saving %>
+      <%= form.number_field :dex_saving, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :con_saving %>
+      <%= form.number_field :con_saving, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :int_saving %>
+      <%= form.number_field :int_saving, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :wis_saving %>
+      <%= form.number_field :wis_saving, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :chr_saving %>
+      <%= form.number_field :chr_saving, required: true %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :climb %>
-    <%= form.number_field :climb, required: true %>
-  </div>
+  <h3>Senses</h3>
 
-  <div class="field">
-    <%= form.label :fly %>
-    <%= form.number_field :fly, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :strength %>
-    <%= form.number_field :strength, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :dexterity %>
-    <%= form.number_field :dexterity, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :constitution %>
-    <%= form.number_field :constitution, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :intellect %>
-    <%= form.number_field :intellect, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :wisdom %>
-    <%= form.number_field :wisdom, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :charisma %>
-    <%= form.number_field :charisma, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :str_saving %>
-    <%= form.number_field :str_saving, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :dex_saving %>
-    <%= form.number_field :dex_saving, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :con_saving %>
-    <%= form.number_field :con_saving, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :int_saving %>
-    <%= form.number_field :int_saving, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :wis_saving %>
-    <%= form.number_field :wis_saving, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :chr_saving %>
-    <%= form.number_field :chr_saving, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :perception %>
-    <%= form.number_field :perception, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :blindsight %>
-    <%= form.number_field :blindsight, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :darkvision %>
-    <%= form.number_field :darkvision, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :tremorsense %>
-    <%= form.number_field :tremorsense, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :truesight %>
-    <%= form.number_field :truesight, required: true %>
+  <div class="fields-horizontal">
+    <div class="field-item flex-10">
+      <%= form.label :perception %>
+      <%= form.number_field :perception, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :blindsight %>
+      <%= form.number_field :blindsight, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :darkvision %>
+      <%= form.number_field :darkvision, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :tremorsense %>
+      <%= form.number_field :tremorsense, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :truesight %>
+      <%= form.number_field :truesight, required: true %>
+    </div>
   </div>
 
   <div class="field">

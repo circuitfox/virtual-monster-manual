@@ -1,5 +1,6 @@
-@import "variables";
 @import "mixins";
+@import "util";
+@import "variables";
 
 *, *:before, *:after {
   box-sizing: inherit;
@@ -90,7 +91,7 @@ main {
   min-height: 100%;
 }
 
-input.field {
+input {
   &[type=button], &[type=submit], &[type=reset] {
     @include button($nav-color);
     color: $nav-text;
@@ -100,22 +101,30 @@ input.field {
     border: none;
     cursor: pointer;
   }
+}
 
+input:not(.addon-field) {
   &:not([type=submit]):not([type=reset]):not([type=button]):not([type=file]) {
     @include text-input($main-color, $nav-color);
   }
 }
 
-select.field {
+select {
   @include text-input($main-color, $nav-color);
 }
 
 div.field {
+  margin: 10px 0px;
+
   label {
     display: block;
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
   }
+}
+
+div.actions {
+  margin: 10px 0px;
 }
 
 .addon-container {
@@ -145,4 +154,27 @@ div.field {
 
 .push-right {
   margin-left: auto;
+}
+
+.fields-horizontal {
+  display: inline-flex;
+}
+
+.field-item {
+  flex: 1 1 auto;
+  margin: 0px 10px;
+  &:first-child {
+    margin-left: 0px;
+  }
+  &:last-child {
+    margin-right: 0px;
+  }
+  & * {
+    width: 100%;
+  }
+  & label {
+    display: block;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
 }
