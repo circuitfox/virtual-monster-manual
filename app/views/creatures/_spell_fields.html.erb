@@ -1,0 +1,23 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, list: "spells-list" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dice %>
+    <%= f.text_field :dice %>
+  </div>
+
+  <div class="field">
+    <%= f.label :level %>
+    <%= f.number_field :level %>
+  </div>
+
+  <%= link_to_remove_association "Remove spell", f %>
+</div>

@@ -56,114 +56,114 @@
     <%= form.text_field :hp_dice, required: true %>
   </div>
 
-  <div class="field">
-    <%= form.label :speed %>
-    <%= form.number_field :speed, required: true %>
+  <h3>Speed</h3>
+
+  <div class="fields-horizontal">
+    <div class="field-item flex-10">
+      <%= form.label :speed %>
+      <%= form.number_field :speed, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :swim %>
+      <%= form.number_field :swim, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :burrow %>
+      <%= form.number_field :burrow, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :climb %>
+      <%= form.number_field :climb, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :fly %>
+      <%= form.number_field :fly, required: true %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :swim %>
-    <%= form.number_field :swim, required: true %>
+  <h3>Stats</h3>
+
+  <div class="fields-horizontal">
+    <div class="field-item flex-10">
+      <%= form.label :strength %>
+      <%= form.number_field :strength, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :dexterity %>
+      <%= form.number_field :dexterity, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :constitution %>
+      <%= form.number_field :constitution, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :intellect %>
+      <%= form.number_field :intellect, required: true %>
+    </div>
+
+    <div class="field-item flex-10">
+      <%= form.label :wisdom %>
+      <%= form.number_field :wisdom, required: true %>
+    </div>
+
+    <div class="field-item flex-10">
+      <%= form.label :charisma %>
+      <%= form.number_field :charisma, required: true %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :burrow %>
-    <%= form.number_field :burrow, required: true %>
+  <h3>Saving Throws</h3>
+
+  <div class="fields-horizontal">
+    <div class="field-item flex-10">
+      <%= form.label :str_saving %>
+      <%= form.number_field :str_saving %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :dex_saving %>
+      <%= form.number_field :dex_saving %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :con_saving %>
+      <%= form.number_field :con_saving %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :int_saving %>
+      <%= form.number_field :int_saving %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :wis_saving %>
+      <%= form.number_field :wis_saving %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :chr_saving %>
+      <%= form.number_field :chr_saving %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :climb %>
-    <%= form.number_field :climb, required: true %>
-  </div>
+  <h3>Senses</h3>
 
-  <div class="field">
-    <%= form.label :fly %>
-    <%= form.number_field :fly, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :strength %>
-    <%= form.number_field :strength, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :dexterity %>
-    <%= form.number_field :dexterity, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :constitution %>
-    <%= form.number_field :constitution, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :intellect %>
-    <%= form.number_field :intellect, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :wisdom %>
-    <%= form.number_field :wisdom, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :charisma %>
-    <%= form.number_field :charisma, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :str_saving %>
-    <%= form.number_field :str_saving, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :dex_saving %>
-    <%= form.number_field :dex_saving, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :con_saving %>
-    <%= form.number_field :con_saving, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :int_saving %>
-    <%= form.number_field :int_saving, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :wis_saving %>
-    <%= form.number_field :wis_saving, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :chr_saving %>
-    <%= form.number_field :chr_saving, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :perception %>
-    <%= form.number_field :perception, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :blindsight %>
-    <%= form.number_field :blindsight, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :darkvision %>
-    <%= form.number_field :darkvision, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :tremorsense %>
-    <%= form.number_field :tremorsense, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :truesight %>
-    <%= form.number_field :truesight, required: true %>
+  <div class="fields-horizontal">
+    <div class="field-item flex-10">
+      <%= form.label :perception %>
+      <%= form.number_field :perception, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :blindsight %>
+      <%= form.number_field :blindsight, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :darkvision %>
+      <%= form.number_field :darkvision, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :tremorsense %>
+      <%= form.number_field :tremorsense, required: true %>
+    </div>
+    <div class="field-item flex-10">
+      <%= form.label :truesight %>
+      <%= form.number_field :truesight, required: true %>
+    </div>
   </div>
 
   <div class="field">
@@ -171,7 +171,124 @@
     <%= form.number_field :challenge, required: true %>
   </div>
 
+  <h2>Damage Immunities</h2>
+
+  <div id="damage_immunities">
+    <%= form.fields_for :damage_immunities do |fields| %>
+      <%= render "damage_immunity_fields", f: fields %>
+    <% end %>
+    <%= link_to_add_association "Add damage immunity", form, :damage_immunities %>
+  </div>
+
+  <h2>Damage Vulnerabilities</h2>
+
+  <div id="damage_vulnerabilities">
+    <%= form.fields_for :damage_vulnerabilities do |fields| %>
+      <%= render "damage_vulnerability_fields", f: fields %>
+    <% end %>
+    <%= link_to_add_association "Add damage vulnerability", form, :damage_vulnerabilities %>
+  </div>
+
+  <h2>Damage Resistances</h2>
+
+  <div id="damage_resistances">
+    <%= form.fields_for :damage_resistances do |fields| %>
+      <%= render "damage_resistance_fields", f: fields %>
+    <% end %>
+    <%= link_to_add_association "Add damage resistance", form, :damage_resistances %>
+  </div>
+
+  <h2>Condition Immunities</h2>
+
+  <div id="condition_immunities">
+    <%= form.fields_for :condition_immunities do |fields| %>
+      <%= render "condition_immunity_fields", f: fields %>
+    <% end %>
+    <%= link_to_add_association "Add condition immunity", form, :condition_immunities %>
+  </div>
+
+  <h2>Languages</h2>
+
+  <div id="languages">
+    <%= form.fields_for :languages do |fields| %>
+      <%= render "language_fields", f: fields %>
+    <% end %>
+    <%= link_to_add_association "Add language", form, :languages %>
+  </div>
+
+  <h2>Skills</h2>
+
+  <div id="skills">
+    <%= form.fields_for :skills do |fields| %>
+      <%= render "skill_fields", f: fields %>
+    <% end %>
+    <%= link_to_add_association "Add skill", form, :skills %>
+  </div>
+
+  <h2>Actions</h2>
+
+  <div id="creature_actions">
+    <%= form.fields_for :creature_actions do |fields| %>
+      <%= render "creature_action_fields", f: fields %>
+    <% end %>
+    <%= link_to_add_association "Add action", form, :creature_actions %>
+  </div>
+
+  <h2>Abilities</h2>
+
+  <div id="abilities">
+    <%= form.fields_for :abilities do |fields| %>
+      <%= render "ability_fields", f: fields %>
+    <% end %>
+    <%= link_to_add_association "Add ability", form, :abilities %>
+  </div>
+
+  <h2>Spells</h2>
+
+  <div id="spells">
+    <%= form.fields_for :spells do |fields| %>
+      <%= render "spell_fields", f: fields %>
+    <% end %>
+    <%= link_to_add_association "Add spell", form, :spells %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
+
+  <datalist id="spells-list">
+    <% for spell in Spell.all do %>
+      <option><%= spell.name %></option>
+    <% end %>
+  </datalist>
+
+  <datalist id="damage-immunities-list">
+    <% for damage_immunity in DamageImmunity.all do %>
+      <option><%= damage_immunity.name %></option>
+    <% end %>
+  </datalist>
+
+  <datalist id="damage-vulnerabilities-list">
+    <% for damage_vulnerability in DamageVulnerability.all do %>
+      <option><%= damage_vulnerability.name %></option>
+    <% end %>
+  </datalist>
+
+  <datalist id="damage-resistances-list">
+    <% for damage_resistance in DamageResistance.all do %>
+      <option><%= damage_resistance.name %></option>
+    <% end %>
+  </datalist>
+
+  <datalist id="condition-immunities-list">
+    <% for condition_immunity in ConditionImmunity.all do %>
+      <option><%= condition_immunity.name %></option>
+    <% end %>
+  </datalist>
+
+  <datalist id="languages-list">
+    <% for language in Language.all do %>
+      <option><%= language.name %></option>
+    <% end %>
+  </datalist>
 <% end %>

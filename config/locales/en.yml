@@ -37,9 +37,9 @@ en:
         ac_type: AC type
         hp: HP
         hp_dice: HP dice
-        str_saving: Strength saving throw
-        dex_saving: Dexterity saving throw
-        con_saving: Constitution saving throw
-        int_saving: Intellect saving throw
-        wis_saving: Wisdom saving throw
-        chr_saving: Charisma saving throw
+        str_saving: Strength
+        dex_saving: Dexterity
+        con_saving: Constitution
+        int_saving: Intellect
+        wis_saving: Wisdom
+        chr_saving: Charisma

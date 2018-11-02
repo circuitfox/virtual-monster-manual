@@ -1,0 +1,8 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, list: "languages-list" %>
+  </div>
+
+  <%= link_to_remove_association "Remove language", f %>
+</div>

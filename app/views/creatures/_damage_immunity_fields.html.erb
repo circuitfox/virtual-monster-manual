@@ -1,0 +1,8 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, list: "damage-immunities-list" %>
+  </div>
+
+  <%= link_to_remove_association "Remove damage immunity", f %>
+</div>

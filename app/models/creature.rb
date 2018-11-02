@@ -13,6 +13,10 @@ class Creature < ApplicationRecord
   has_and_belongs_to_many :condition_immunities
   has_and_belongs_to_many :languages
 
+  accepts_nested_attributes_for :creature_actions, :skills, :abilities,
+    :spells, :damage_immunities, :damage_vulnerabilities, :damage_resistances,
+    :condition_immunities, :languages, allow_destroy: true, reject_if: :all_blank
+
   #validations here, with itself
   validates :name, :type, :size, :alignment, presence: true
   validates :ac, :hp, :speed, :swim, :burrow, :climb, :fly, :strength,
