@@ -1,5 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-Fireball:
+fireball:
   name: fireball
   description: >
     A bright streak flashes from your pointing finger to a point you choose within 

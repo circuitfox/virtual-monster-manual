@@ -101,7 +101,23 @@ class CreaturesController < ApplicationController
         :darkvision,
         :tremorsense,
         :truesight,
-        :challenge
+        :challenge,
+        creature_actions_attributes: [
+          :id,
+          :name,
+          :damage_dice,
+          :description,
+          :range,
+          :_destroy,
+        ],
+        abilities_attributes: [:id, :name, :description, :_destroy],
+        skills_attributes: [:id, :name, :bonus, :_destroy],
+        spells_attributes: [:id, :name, :description, :level, :dice, :_destroy],
+        damage_immunities_attributes: [:id, :name, :_destroy],
+        damage_vulnerabilities_attributes: [:id, :name, :_destroy],
+        damage_resistances_attributes: [:id, :name, :_destroy],
+        condition_immunities_attributes: [:id, :name, :_destroy],
+        languages_attributes: [:id, :name, :_destroy],
       )
     end
 end

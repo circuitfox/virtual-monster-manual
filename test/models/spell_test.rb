@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SpellTest < ActiveSupport::TestCase
   setup do 
-    @spell = spells(:Fireball)
+    @spell = spells(:fireball)
   end
 
   test "name must be valid" do
