@@ -1,12 +1,12 @@
 <div class="nested-fields">
  <div class="field">
    <%= f.label :name %>
-   <%= f.text_field :name, required: true %>
+   <%= f.text_field :name %>
  </div>
 
  <div class="field">
    <%= f.label :bonus %>
-   <%= f.number_field :bonus, required: true %>
+   <%= f.number_field :bonus %>
  </div>
 
  <%= link_to_remove_association "Remove skill", f %>
