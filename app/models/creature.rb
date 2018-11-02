@@ -52,4 +52,8 @@ class Creature < ApplicationRecord
         !self.wis_saving.nil? ||
         !self.chr_saving.nil?
     end
+
+    def self.search(key, query)
+      self.where("#{key} LIKE ?", "%#{query}%")
+    end
 end

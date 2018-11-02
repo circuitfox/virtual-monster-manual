@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :abilities
   resources :condition_immunities
   resources :creatures
+  post "creatures/search", to: "creatures#search"
   resources :creature_actions
   resources :damage_immunities
   resources :damage_resistances
