@@ -1,10 +1,23 @@
 class CreaturesController < ApplicationController
   before_action :set_creature, only: [:show, :edit, :update, :destroy]
 
+  def search_config
+    @search_config ||= {
+      path: "/creatures/search",
+      placeholder: "Search Creatures"
+    }
+  end
+
   # GET /creatures
   # GET /creatures.json
   def index
     @creatures = Creature.all
+  end
+  
+  #Search
+  def search
+    @creatures = Creature.search(:name, params[:query])
+    render :index 
   end
 
   # GET /creatures/1
