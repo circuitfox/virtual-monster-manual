@@ -13,11 +13,11 @@ class CreaturesController < ApplicationController
   def index
     @creatures = Creature.all
   end
-  
+
   #Search
   def search
     @creatures = Creature.search(:name, params[:query])
-    render :index 
+    j render :index, layout: false
   end
 
   # GET /creatures/1
