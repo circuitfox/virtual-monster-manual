@@ -21,10 +21,10 @@ class Creature < ApplicationRecord
   validates :name, :type, :size, :alignment, presence: true
   validates :ac, :hp, :speed, :swim, :burrow, :climb, :fly, :strength,
     :dexterity, :constitution, :intellect, :wisdom, :charisma, :perception,
-    :blindsight, :darkvision, :tremorsense, :truesight, :challenge, presence: true, 
+    :blindsight, :darkvision, :tremorsense, :truesight, :challenge, presence: true,
     numericality: { only_integer: true }
   validates :hp_dice, dice: { message: "Dice should be in form 1d4 + 8" }
-  validates :str_saving, :dex_saving, :con_saving, :int_saving, 
+  validates :str_saving, :dex_saving, :con_saving, :int_saving,
     :wis_saving, :chr_saving, numericality: { only_integer: true, allow_nil: true }
 
   enum size: [:tiny, :small, :medium, :large, :huge, :gargantuan], _prefix: :size
@@ -53,7 +53,14 @@ class Creature < ApplicationRecord
         !self.chr_saving.nil?
     end
 
-    def self.search(key, query)
-      self.where("#{key} LIKE ?", "%#{query}%")
+    def self.search(attrs)
+      likes = []
+      data = []
+      attrs.each_pair { |(key, query)|
+        likes << "#{key} LIKE ?"
+        data << "%#{query}%"
+      }
+      sql = likes.join(" AND ")
+      self.where(sql, *data)
     end
 end

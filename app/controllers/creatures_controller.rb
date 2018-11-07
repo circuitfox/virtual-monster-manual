@@ -16,7 +16,7 @@ class CreaturesController < ApplicationController
 
   #Search
   def search
-    @creatures = Creature.search(:name, params[:query])
+    @creatures = Creature.search({name: params[:query]})
     j render :index, layout: false
   end
 
