@@ -1,0 +1,12 @@
+<div class="collapse-wrapper">
+  <input id="<%= model %>-collapse" class="toggle" type="checkbox" checked>
+  <label for="<%= model %>-collapse" class="toggle-label container collapse-header">
+    <h3><%= model.humanize %></h3>
+    <span class="collapse-note push-right"><%# filled by css %></span>
+  </label>
+  <div class="collapse-content">
+    <div class="collapse-inner">
+      <%= yield %>
+    </div>
+  </div>
+</div>
