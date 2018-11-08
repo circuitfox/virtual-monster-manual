@@ -178,3 +178,52 @@ div.actions {
     margin-bottom: 0.25rem;
   }
 }
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.collapse-header {
+  cursor: pointer;
+  border-top: solid 1px lighten($main-text, 75);
+}
+
+.toggle {
+  display: none;
+}
+
+.collapse-note {
+  font-size: small;
+  font-style: italic;
+  color: lighten($main-text, 50);
+}
+
+.collapse-content {
+  max-height: 0px;
+  overflow: hidden;
+
+  transition: max-height .25s ease-in-out;
+}
+
+.toggle + .toggle-label .collapse-note:after {
+  content: "show";
+}
+
+.toggle:checked + .toggle-label .collapse-note:after {
+  content: "hide";
+}
+
+.toggle:checked + .toggle-label + .collapse-content {
+  max-height: 500px;
+}
+
+.collection-item {
+  border-bottom: solid 1px lighten($main-text, 80);
+  &:last-child {
+    border: none;
+  }
+  &:first-child {
+    border-top: solid 1px lighten($main-text, 75);
+  }
+}
