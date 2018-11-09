@@ -73,38 +73,38 @@
         <p>
         <% if !creature.str_saving.nil? %>
           Str +<%= creature.str_saving %>
-      <% end %>
-      <% if !creature.dex_saving.nil? %>
-        Dex +<%= creature.dex_saving %>
-    <% end %>
-    <% if !creature.con_saving.nil? %>
-      Con +<%= creature.con_saving %>
-  <% end %>
-  <% if !creature.int_saving.nil? %>
-    Int +<%= creature.int_saving %>
-<% end %>
-<% if !creature.wis_saving.nil? %>
-  Wis +<%= creature.wis_saving %>
-  <% end %>
-  <% if !creature.chr_saving.nil? %>
-    Chr +<%= creature.chr_saving %>
-<% end %>
+        <% end %>
+        <% if !creature.dex_saving.nil? %>
+          Dex +<%= creature.dex_saving %>
+        <% end %>
+        <% if !creature.con_saving.nil? %>
+          Con +<%= creature.con_saving %>
+        <% end %>
+        <% if !creature.int_saving.nil? %>
+          Int +<%= creature.int_saving %>
+        <% end %>
+        <% if !creature.wis_saving.nil? %>
+          Wis +<%= creature.wis_saving %>
+        <% end %>
+        <% if !creature.chr_saving.nil? %>
+          Chr +<%= creature.chr_saving %>
+        <% end %>
         </p>
       <% end %>
       <p>
       Senses: passive perception: <%= creature.perception %>
-    <% if creature.blindsight? %>
-      blindsight: <%= creature.blindsight %>ft.
-    <% end %>
-    <% if creature.darkvision? %>
-      darkvision: <%= creature.darkvision %>ft.
-    <% end %>
-    <% if creature.tremorsense? %>
-      tremorsense: <%= creature.tremorsense %>ft.
-    <% end %>
-    <% if creature.truesight? %>
-      truesight: <%= creature.truesight %>ft.
-    <% end %>
+      <% if creature.blindsight? %>
+        blindsight: <%= creature.blindsight %>ft.
+      <% end %>
+      <% if creature.darkvision? %>
+        darkvision: <%= creature.darkvision %>ft.
+      <% end %>
+      <% if creature.tremorsense? %>
+        tremorsense: <%= creature.tremorsense %>ft.
+      <% end %>
+      <% if creature.truesight? %>
+        truesight: <%= creature.truesight %>ft.
+      <% end %>
       </p>
       <p>Challenge: <%= creature.challenge %> XP</p>
       <% if !creature.creature_actions.empty? %>
