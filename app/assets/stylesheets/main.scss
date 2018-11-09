@@ -215,7 +215,7 @@ div.actions {
 }
 
 .toggle:checked + .toggle-label + .collapse-content {
-  max-height: 500px;
+  max-height: 5000px;
 }
 
 .collection-item {
@@ -226,4 +226,12 @@ div.actions {
   &:first-child {
     border-top: solid 1px lighten($main-text, 75);
   }
+}
+
+.collapse-singleton {
+  border-top: solid 1px lighten($main-text, 75);
+}
+
+.creatures {
+  padding: 20px 0px;
 }
