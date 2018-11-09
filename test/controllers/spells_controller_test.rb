@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SpellsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @spell = spells(:one)
+    @spell = spells(:fireball)
   end
 
   test "should get index" do
@@ -17,7 +17,12 @@ class SpellsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create spell" do
     assert_difference('Spell.count') do
-      post spells_url, params: { spell: {  } }
+      post spells_url, params: { spell: {
+        name: "Magic Missile",
+        description: "Does force damage" ,
+        dice: "1d4+1",
+        level: 1
+         } }
     end
 
     assert_redirected_to spell_url(Spell.last)
@@ -34,7 +39,7 @@ class SpellsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update spell" do
-    patch spell_url(@spell), params: { spell: {  } }
+    patch spell_url(@spell), params: { spell: {name: "magic missile"  } }
     assert_redirected_to spell_url(@spell)
   end
 

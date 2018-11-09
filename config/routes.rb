@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :spells
   root "creatures#index"
 
   get "signup", to: "users#new", as: "signup"
@@ -18,5 +17,6 @@ Rails.application.routes.draw do
   resources :damage_vulnerabilities
   resources :languages
   resources :skills
+  resources :spells
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
