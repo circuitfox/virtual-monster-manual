@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Spell Name: <%= @spell.name %></h2>
+<h3>Creature Name: <%= @spell.creature.name %></h3>
+<h4>Description: <%= @spell.description %></h4>
+<h5>Dice: <%= @spell.dice %></h5>
+<h6>Level: <%= @spell.level %></h6>
+
+<%= link_to 'Edit', edit_spell_path(@spell) %> |
+<%= link_to 'Back', spells_path %>
