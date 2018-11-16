@@ -2,6 +2,12 @@ class SkillsController < ApplicationController
   before_action :set_skill, only: [:show, :edit, :update, :destroy]
   before_action :is_admin, only: [:edit, :update, :destroy]
 
+  def search_config
+    @search_config ||= {
+      path: "/skills/search",
+      placeholder: "Search Skills"
+    }
+  end
   # GET /skills
   # GET /skills.json
   def index

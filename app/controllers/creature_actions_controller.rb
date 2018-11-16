@@ -2,6 +2,12 @@ class CreatureActionsController < ApplicationController
   before_action :set_creature_action, only: [:show, :edit, :update, :destroy]
   before_action :is_admin, only: [:edit, :update, :destroy]
 
+  def search_config
+    @search_config ||= {
+      path: "/creature_actions/search",
+      placeholder: "Search Actions"
+    }
+  end
   # GET /creature_actions
   # GET /creature_actions.json
   def index
