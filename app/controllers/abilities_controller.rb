@@ -3,7 +3,7 @@ class AbilitiesController < ApplicationController
 
   def search_config
     @search_config ||= {
-      path: "/abilitiess/search",
+      path: "/abilities/search",
       placeholder: "Search Abilities"
     }
   end
