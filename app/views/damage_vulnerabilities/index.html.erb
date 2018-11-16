@@ -15,8 +15,10 @@
       <tr>
         <td><%= damage_vulnerability.name %></td>
         <td><%= link_to 'Show', damage_vulnerability %></td>
-        <td><%= link_to 'Edit', edit_damage_vulnerability_path(damage_vulnerability) %></td>
-        <td><%= link_to 'Destroy', damage_vulnerability, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if admin? %>
+          <td><%= link_to 'Edit', edit_damage_vulnerability_path(damage_vulnerability) %></td>
+          <td><%= link_to 'Destroy', damage_vulnerability, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

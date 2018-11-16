@@ -1,5 +1,6 @@
 class SkillsController < ApplicationController
   before_action :set_skill, only: [:show, :edit, :update, :destroy]
+  before_action :is_admin, only: [:edit, :update, :destroy]
 
   # GET /skills
   # GET /skills.json

@@ -1,5 +1,6 @@
 class CreatureActionsController < ApplicationController
   before_action :set_creature_action, only: [:show, :edit, :update, :destroy]
+  before_action :is_admin, only: [:edit, :update, :destroy]
 
   # GET /creature_actions
   # GET /creature_actions.json

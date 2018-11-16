@@ -2,6 +2,7 @@ require 'test_helper'
 
 class CreatureActionsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    login_as users(:test_admin)
     @creature_action = creature_actions(:talon)
   end
 

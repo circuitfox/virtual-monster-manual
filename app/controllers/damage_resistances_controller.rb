@@ -1,5 +1,6 @@
 class DamageResistancesController < ApplicationController
   before_action :set_damage_resistance, only: [:show, :edit, :update, :destroy]
+  before_action :is_admin, only: [:edit, :update, :destroy]
 
   # GET /damage_resistances
   # GET /damage_resistances.json

@@ -1,5 +1,6 @@
 class ConditionImmunitiesController < ApplicationController
   before_action :set_condition_immunity, only: [:show, :edit, :update, :destroy]
+  before_action :is_admin, only: [:edit, :update, :destroy]
 
   # GET /condition_immunities
   # GET /condition_immunities.json
