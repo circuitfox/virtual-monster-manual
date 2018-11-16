@@ -1,5 +1,6 @@
 class DamageVulnerabilitiesController < ApplicationController
   before_action :set_damage_vulnerability, only: [:show, :edit, :update, :destroy]
+  before_action :is_admin, only: [:edit, :update, :destroy]
 
   # GET /damage_vulnerabilities
   # GET /damage_vulnerabilities.json

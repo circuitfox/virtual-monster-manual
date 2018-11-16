@@ -2,6 +2,7 @@ require 'test_helper'
 
 class ConditionImmunitiesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    login_as users(:test_admin)
     @condition_immunity = condition_immunities(:one)
   end
 

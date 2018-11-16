@@ -2,6 +2,7 @@ require 'test_helper'
 
 class DamageVulnerabilitiesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    login_as users(:test_admin)
     @damage_vulnerability = damage_vulnerabilities(:one)
   end
 

@@ -2,6 +2,7 @@ require 'test_helper'
 
 class SpellsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    login_as users(:test_admin)
     @spell = spells(:fireball)
   end
 

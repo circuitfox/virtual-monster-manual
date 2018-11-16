@@ -15,8 +15,10 @@
       <tr>
         <td><%= damage_resistance.name %></td>
         <td><%= link_to 'Show', damage_resistance %></td>
-        <td><%= link_to 'Edit', edit_damage_resistance_path(damage_resistance) %></td>
-        <td><%= link_to 'Destroy', damage_resistance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if admin? %>
+          <td><%= link_to 'Edit', edit_damage_resistance_path(damage_resistance) %></td>
+          <td><%= link_to 'Destroy', damage_resistance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

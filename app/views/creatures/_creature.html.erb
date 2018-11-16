@@ -5,9 +5,11 @@
          tabindex=0>
     <h2><%= creature.name %></h2>
     <div class="push-right">
-      <%= link_to 'Show', creature_path(creature) %> |
-      <%= link_to 'Edit', edit_creature_path(creature) %> |
-      <%= link_to 'Destroy', creature, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if admin? %>
+        <%= link_to 'Show', creature_path(creature) %> |
+        <%= link_to 'Edit', edit_creature_path(creature) %> |
+        <%= link_to 'Destroy', creature, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </div>
   </label>
   <div class="collapse-content">

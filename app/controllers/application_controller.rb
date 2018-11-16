@@ -10,16 +10,20 @@ class ApplicationController < ActionController::Base
       }
     end
 
+    def is_admin
+      redirect_back fallback_location: root_url unless admin?
+    end
+
   private
     def current_user
       @current_user ||= User.find(session[:user_id]) if session[:user_id]
     end
 
     def logged_in?
-      @current_user != nil
+      current_user != nil
     end
 
     def admin?
-      @current_user && @current_user.admin?
+      current_user && current_user.admin?
     end
 end
