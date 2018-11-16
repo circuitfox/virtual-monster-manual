@@ -1,6 +1,12 @@
 class AbilitiesController < ApplicationController
   before_action :set_ability, only: [:show, :edit, :update, :destroy]
 
+  def search_config
+    @search_config ||= {
+      path: "/abilitiess/search",
+      placeholder: "Search Abilities"
+    }
+  end
   # GET /abilities
   # GET /abilities.json
   def index

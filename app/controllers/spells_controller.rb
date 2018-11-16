@@ -1,6 +1,13 @@
 class SpellsController < ApplicationController
   before_action :set_spell, only: [:show, :edit, :update, :destroy]
 
+  def search_config
+    @search_config ||= {
+      path: "/spells/search",
+      placeholder: "Search Spells"
+    }
+  end
+
   # GET /spells
   # GET /spells.json
   def index
