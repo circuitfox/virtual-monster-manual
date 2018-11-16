@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_15_155755) do
+ActiveRecord::Schema.define(version: 2018_11_15_221443) do
 
   create_table "abilities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "creature_id"
@@ -166,6 +166,7 @@ ActiveRecord::Schema.define(version: 2018_10_15_155755) do
     t.boolean "admin", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "password_reset", default: false
   end
 
   add_foreign_key "abilities", "creatures"

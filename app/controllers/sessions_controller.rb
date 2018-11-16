@@ -4,9 +4,13 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:name]) || User.find_by(name: params[:name])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to root_url, notice: "Logged in"
+    if user
+      if user.password_reset?
+        redirect_to password_reset_url(user), notice: "Password reset required"
+      elsif user.authenticate(params[:password])
+        session[:user_id] = user.id
+        redirect_to root_url, notice: "Logged in"
+      end
     else
       flash.now.alert = "Credentials are invalid"
     end
