@@ -93,4 +93,44 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to root_url
   end
+
+  test "should redirect to password_reset if password_reset true" do
+    logout
+    login_as @admin
+    assert_redirected_to password_reset_url(@admin)
+  end
+
+  test "should reset password if password_reset true" do
+    logout
+    patch password_reset_url(@admin), params: { user: {
+      password: "newpassword",
+      password_confirmation: "newpassword",
+      password_reset: false
+    }}
+    assert_redirected_to root_url
+    assert logged_in?
+    @admin.reload
+    assert !@admin.password_reset
+  end
+
+  test "should not redirect to password_reset if password_reset false" do
+    logout
+    login_as @user
+    assert_redirected_to root_url
+  end
+
+  test "should 404 on attempt to access password_reset form is password_reset false" do
+    get password_reset_url(@user)
+    assert_response :missing
+  end
+
+  test "should 404 on reset attempt if password_reset false" do
+    logout
+    patch password_reset_url(@user), params: { user: {
+      password: "newpassword",
+      password_confirmation: "newpassword",
+      password_reset: false
+    }}
+    assert_response :missing
+  end
 end

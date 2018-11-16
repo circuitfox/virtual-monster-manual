@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "signup", to: "users#new", as: "signup"
   get "login", to: "sessions#new", as: "login"
   delete "logout", to: "sessions#destroy", as: "logout"
+  get "password_reset/:id", to: "users#password_reset", as: "password_reset"
+  match "password_reset/:id", to: "users#reset", via: [:patch, :put]
   resources :users
   resources :sessions
 
