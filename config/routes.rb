@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :creature_sets
   root "creatures#index"
 
   get "signup", to: "users#new", as: "signup"
