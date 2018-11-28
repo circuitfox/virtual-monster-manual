@@ -20,6 +20,21 @@ class CreaturesController < ApplicationController
     j render :index, layout: false
   end
 
+  def search2
+    @creatures = Creature.search(params.except(
+      :utf8,
+      :authenticity_token,
+      :commit,
+      :controller,
+      :action
+    ))
+    j render :index, layout: false
+  end
+
+  def advanced_search
+    render :search
+  end
+
   # GET /creatures/1
   # GET /creatures/1.json
   def show
