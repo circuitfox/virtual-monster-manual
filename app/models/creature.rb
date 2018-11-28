@@ -57,8 +57,10 @@ class Creature < ApplicationRecord
       likes = []
       data = []
       attrs.each_pair { |(key, query)|
-        likes << "#{key} LIKE ?"
-        data << "%#{query}%"
+        if !query.blank? 
+          likes << "#{key} LIKE ?"
+          data << "%#{query}%"
+        end
       }
       sql = likes.join(" AND ")
       self.where(sql, *data)
