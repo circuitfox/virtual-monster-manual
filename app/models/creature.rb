@@ -57,7 +57,13 @@ class Creature < ApplicationRecord
       likes = []
       data = []
       attrs.each_pair { |(key, query)|
-        if !query.blank? 
+        if key == "type"
+          query = self.types[query]
+        elsif key == "size"
+          query = self.sizes[query]
+        end
+
+        if !query.blank?
           likes << "#{key} LIKE ?"
           data << "%#{query}%"
         end
