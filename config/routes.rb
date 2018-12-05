@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "creatures#index"
+  root "landing#index"
 
   get "signup", to: "users#new", as: "signup"
   get "login", to: "sessions#new", as: "login"
@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   match "password_reset/:id", to: "users#reset", via: [:patch, :put]
   resources :users
   resources :sessions
+  get 'landing/index'
 
   resources :abilities
   resources :condition_immunities
