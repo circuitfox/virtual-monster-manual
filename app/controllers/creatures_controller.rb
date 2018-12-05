@@ -17,11 +17,14 @@ class CreaturesController < ApplicationController
 
   #Search
   def search
+    logger.debug "[Creature] hit basic search"
     @creatures = Creature.search({name: params[:query]})
     j render :index, layout: false
   end
 
+  # POST /creatures/advanced_search
   def search2
+    logger.debug "[Creature] hit advanced search"
     @creatures = Creature.search(params.except(
       :utf8,
       :authenticity_token,

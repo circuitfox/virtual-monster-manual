@@ -1,4 +1,6 @@
 class Creature < ApplicationRecord
+  include Searchable
+
   # we're not going to use this, but it conflicts with the 'type'
   # column so we need to give it another name
   self.inheritance_column = 'inheritance_type'
@@ -54,21 +56,15 @@ class Creature < ApplicationRecord
     end
 
     def self.search(attrs)
-      likes = []
-      data = []
-      attrs.each_pair { |(key, query)|
-        if key == "type"
-          query = self.types[query]
-        elsif key == "size"
-          query = self.sizes[query]
-        end
-
-        if !query.blank?
-          likes << "#{key} LIKE ?"
-          data << "%#{query}%"
+      logger.debug "In creature search"
+      super(attrs) { |key, query|
+        if key === :type
+          self.types[query]
+        elsif key === :size
+          self.sizes[query]
+        else
+          query
         end
       }
-      sql = likes.join(" AND ")
-      self.where(sql, *data)
     end
 end
