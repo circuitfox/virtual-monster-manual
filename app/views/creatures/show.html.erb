@@ -96,7 +96,7 @@
 </p>
 <p>Challenge: <%= @creature.challenge %> XP</p>
 <% if !@creature.creature_actions.empty? %>
-  <%= render layout: "show_container", locals: { model: "actions" } do %>
+  <%= render layout: "show_container", locals: { model: "actions", id: @creature.id } do %>
     <% for action in @creature.creature_actions do %>
       <div class="collection-item">
         <h4><%= action.name %></h4>
@@ -108,7 +108,7 @@
   <% end %>
 <% end %>
 <% if !@creature.abilities.empty? %>
-  <%= render layout: "show_container", locals: { model: "abilities" } do %>
+  <%= render layout: "show_container", locals: { model: "abilities", id: @creature.id } do %>
     <% for ability in @creature.abilities do %>
       <div class="collection-item">
         <h4><%= ability.name %></h4>
@@ -118,7 +118,7 @@
   <% end %>
 <% end %>
 <% if !@creature.skills.empty? %>
-  <%= render layout: "show_container", locals: { model: "skills" } do %>
+  <%= render layout: "show_container", locals: { model: "skills", id: @creature.id } do %>
     <% for skill in @creature.skills do %>
       <div class="collection-item">
         <p><%= skill.name %> +<%= skill.bonus %></p>
@@ -127,7 +127,7 @@
   <% end %>
 <% end %>
 <% if !@creature.spells.empty? %>
-  <%= render layout: "show_container", locals: { model: "spells" } do %>
+  <%= render layout: "show_container", locals: { model: "spells", id: @creature.id } do %>
     <% for spell in @creature.spells do %>
       <div class="collection-item" >
         <h4><%= spell.name %> (level <%= spell.level %>)</h4>
@@ -138,7 +138,7 @@
   <% end %>
 <% end %>
 <% if !@creature.languages.empty? %>
-  <%= render layout: "show_container", locals: { model: "languages" } do %>
+  <%= render layout: "show_container", locals: { model: "languages", id: @creature.id } do %>
     <% for language in @creature.languages %>
       <div class="collection-item">
         <p><%= language.name %></p>
@@ -147,7 +147,7 @@
   <% end %>
 <% end %>
 <% if !@creature.damage_vulnerabilities.empty? %>
-  <%= render layout: "show_container", locals: { model: "damage_vulnerabilities" } do %>
+  <%= render layout: "show_container", locals: { model: "damage_vulnerabilities", id: @creature.id } do %>
     <% for damage_vulnerability in @creature.damage_vulnerabilities %>
       <div class="collection-item">
         <p><%= damage_vulnerability.name %></p>
@@ -156,7 +156,7 @@
   <% end %>
 <% end %>
 <% if !@creature.damage_resistances.empty? %>
-  <%= render layout: "show_container", locals: { model: "damage_resistances" } do %>
+  <%= render layout: "show_container", locals: { model: "damage_resistances", id: @creature.id } do %>
     <% for damage_resistance in @creature.damage_resistances %>
       <div class="collection-item">
         <p><%= damage_resistance.name %></p>
@@ -165,7 +165,7 @@
   <% end %>
 <% end %>
 <% if !@creature.damage_immunities.empty? %>
-  <%= render layout: "show_container", locals: { model: "damage_immunities" } do %>
+  <%= render layout: "show_container", locals: { model: "damage_immunities", id: @creature.id } do %>
     <% for damage_immunity in @creature.damage_immunities %>
       <div class="collection-item">
         <p><%= damage_immunity.name %></p>
@@ -174,7 +174,7 @@
   <% end %>
 <% end %>
 <% if !@creature.condition_immunities.empty? %>
-  <%= render layout: "show_container", locals: { model: "condition_immunities" } do %>
+  <%= render layout: "show_container", locals: { model: "condition_immunities", id: @creature.id } do %>
     <% for condition_immunity in @creature.condition_immunities %>
       <div class="collection-item">
         <p><%= condition_immunity.name %></p>
