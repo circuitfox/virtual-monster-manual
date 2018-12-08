@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user, :logged_in?, :admin?, :search_config
+  before_action :authenticate
 
   protected
     def search_config
@@ -35,5 +36,11 @@ class ApplicationController < ActionController::Base
 
     def admin?
       current_user && current_user.admin?
+    end
+
+    def authenticate
+      if !logged_in?
+        redirect_to landing_index_url, alert: "Please log in first"
+      end
     end
 end
