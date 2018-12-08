@@ -235,3 +235,24 @@ div.actions {
 .creatures {
   padding: 20px 0px;
 }
+
+div {
+    &.alert, &.notice {
+        margin: auto;
+        max-width: 20%;
+        border: 1px solid;
+        border-radius: 0.25rem;
+        text-align: center;
+        padding: 1rem;
+    }
+    &.alert {
+        color: $color-alert;
+        background-color: $bg-alert;
+        border-color: $color-alert;
+    }
+    &.notice {
+        color: $color-notice;
+        background-color: $bg-notice;
+        border-color: $color-notice;
+    }
+}
