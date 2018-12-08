@@ -40,7 +40,7 @@ class ApplicationController < ActionController::Base
 
     def authenticate
       if !logged_in?
-        redirect_to landing_index_url, alert: "Please log in first"
+        redirect_to root_url, alert: "Please log in first"
       end
     end
 end
