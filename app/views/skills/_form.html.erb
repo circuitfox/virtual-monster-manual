@@ -12,19 +12,19 @@
   <% end %>
 
   <div class="field">
-   <%= form.label :creature_id, "Creature" %>
-   <%= form.collection_select(:creature_id, Creature.all, :id, :name) %>
- </div>
+    <%= form.label :creature_id, "Creature" %>
+    <%= form.collection_select(:creature_id, Creature.all, :id, :name) %>
+  </div>
 
- <div class="field">
-   <%= form.label :name %>
-   <%= form.text_field :name, required: true %>
- </div>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true %>
+  </div>
 
- <div class="field">
-   <%= form.label :bonus %>
-   <%= form.number_field :bonus, required: true %>
- </div>
+  <div class="field">
+    <%= form.label :bonus %>
+    <%= form.number_field :bonus, required: true %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

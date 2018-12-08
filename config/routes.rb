@@ -23,5 +23,10 @@ Rails.application.routes.draw do
   resources :languages
   resources :skills
   resources :spells
+
+  get 'search/index'
+  get 'search/search', as: 'search'
+  post 'search', to: 'search#run_search'
+  post 'search/advanced_search', to: 'search#advanced_search', as: 'advanced_search'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

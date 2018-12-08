@@ -10,6 +10,16 @@ class ApplicationController < ActionController::Base
       }
     end
 
+    def search_params
+      params.except(
+        :utf8,
+        :authenticity_token,
+        :commit,
+        :controller,
+        :action
+      )
+    end
+
     def is_admin
       redirect_back fallback_location: root_url unless admin?
     end
