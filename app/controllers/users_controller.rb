@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :password_reset, :reset]
   before_action :logged_in_user, only: [:edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
+  skip_before_action :authenticate, only: [:new, :create, :password_reset, :reset]
 
   def new
     @user = User.new

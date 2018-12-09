@@ -1,6 +1,6 @@
 <div class="collapse-wrapper">
-  <input id="<%= model %>-collapse" class="toggle" type="checkbox" checked>
-  <label for="<%= model %>-collapse" class="toggle-label container collapse-header" tabindex=0>
+  <input id="<%= model %><%= id || "" %>-collapse" class="toggle" type="checkbox" checked>
+  <label for="<%= model %><%= id || ""%>-collapse" class="toggle-label container collapse-header" tabindex=0>
     <h3><%= model.humanize %></h3>
     <span class="collapse-note push-right"><%# filled by css %></span>
   </label>

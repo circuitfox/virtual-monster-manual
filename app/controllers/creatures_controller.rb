@@ -25,13 +25,7 @@ class CreaturesController < ApplicationController
   # POST /creatures/advanced_search
   def search2
     logger.debug "[Creature] hit advanced search"
-    @creatures = Creature.search(params.except(
-      :utf8,
-      :authenticity_token,
-      :commit,
-      :controller,
-      :action
-    ))
+    @creatures = Creature.search(search_params)
     j render :index, layout: false
   end
 
