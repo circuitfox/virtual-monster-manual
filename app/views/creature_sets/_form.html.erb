@@ -26,10 +26,13 @@
     <%= form.check_box :private%>
   </div>
 
-  <!-- <div class="field">
-    <%= form.label :creature_id, "Add a creature" %>
-    <%= form.collection_select(:creature_id, Creature.all, :id, :name) %>
-  </div> -->
+  <div id="creatures">
+    <div class="field" id="first-creature">
+      <label for="creatures[]">Add a creature</label>
+      <%= form.collection_select("creatures", Creature.all, :id, :name, {include_blank: true}, { name: "creatures[]" }) %>
+    </div>
+    <!-- js will append more copies of #first-id down here -->
+  </div>
 
   <div class="actions">
     <%= form.submit %>
