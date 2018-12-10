@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :creature_sets
+  has_many :creature_sets, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
