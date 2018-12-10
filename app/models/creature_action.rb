@@ -1,4 +1,6 @@
 class CreatureAction < ApplicationRecord
+  include Searchable
+
   belongs_to :creature
 
   validates :creature, :name, :description, presence: true

@@ -1,4 +1,6 @@
 class Creature < ApplicationRecord
+  include Searchable
+
   # we're not going to use this, but it conflicts with the 'type'
   # column so we need to give it another name
   self.inheritance_column = 'inheritance_type'
@@ -21,10 +23,10 @@ class Creature < ApplicationRecord
   validates :name, :type, :size, :alignment, presence: true
   validates :ac, :hp, :speed, :swim, :burrow, :climb, :fly, :strength,
     :dexterity, :constitution, :intellect, :wisdom, :charisma, :perception,
-    :blindsight, :darkvision, :tremorsense, :truesight, :challenge, presence: true, 
+    :blindsight, :darkvision, :tremorsense, :truesight, :challenge, presence: true,
     numericality: { only_integer: true }
   validates :hp_dice, dice: { message: "Dice should be in form 1d4 + 8" }
-  validates :str_saving, :dex_saving, :con_saving, :int_saving, 
+  validates :str_saving, :dex_saving, :con_saving, :int_saving,
     :wis_saving, :chr_saving, numericality: { only_integer: true, allow_nil: true }
 
   enum size: [:tiny, :small, :medium, :large, :huge, :gargantuan], _prefix: :size
@@ -53,7 +55,16 @@ class Creature < ApplicationRecord
         !self.chr_saving.nil?
     end
 
-    def self.search(key, query)
-      self.where("#{key} LIKE ?", "%#{query}%")
+    def self.search(attrs)
+      logger.debug "In creature search"
+      super(attrs) { |key, query|
+        if key === :type
+          self.types[query]
+        elsif key === :size
+          self.sizes[query]
+        else
+          query
+        end
+      }
     end
 end

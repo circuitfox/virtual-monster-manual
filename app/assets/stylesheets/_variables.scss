@@ -2,3 +2,8 @@ $main-color: #fff;
 $bg-color: $main-color;
 $nav-color: #ccc;
 $nav-text: #000;
+$main-text: #000;
+$color-alert: #ba4545;
+$color-notice: #35a565;
+$bg-alert: lighten($color-alert, 35%);
+$bg-notice: lighten($color-notice, 35%);

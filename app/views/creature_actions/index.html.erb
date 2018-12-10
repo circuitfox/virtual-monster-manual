@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Creature Actions</h1>
 
@@ -15,8 +15,10 @@
       <tr>
         <td><%= creature_action.name %></td>
         <td><%= link_to 'Show', creature_action %></td>
-        <td><%= link_to 'Edit', edit_creature_action_path(creature_action) %></td>
-        <td><%= link_to 'Destroy', creature_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if admin? %>
+          <td><%= link_to 'Edit', edit_creature_action_path(creature_action) %></td>
+          <td><%= link_to 'Destroy', creature_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

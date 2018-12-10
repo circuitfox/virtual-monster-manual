@@ -11,3 +11,10 @@ admin:
   email: admin@example.com
   admin: true
   password_digest: <%= BCrypt::Password.create("password") %>
+  password_reset: true
+
+test_admin:
+  name: test_admin
+  email: admin@test.com
+  admin: true
+  password_digest: <%= BCrypt::Password.create("password") %>

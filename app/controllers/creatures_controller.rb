@@ -1,5 +1,6 @@
 class CreaturesController < ApplicationController
   before_action :set_creature, only: [:show, :edit, :update, :destroy]
+  before_action :is_admin, only: [:edit, :update, :destroy]
 
   def search_config
     @search_config ||= {
@@ -16,8 +17,20 @@ class CreaturesController < ApplicationController
 
   #Search
   def search
-    @creatures = Creature.search(:name, params[:query])
+    logger.debug "[Creature] hit basic search"
+    @creatures = Creature.search({name: params[:query]})
     j render :index, layout: false
+  end
+
+  # POST /creatures/advanced_search
+  def search2
+    logger.debug "[Creature] hit advanced search"
+    @creatures = Creature.search(search_params)
+    j render :index, layout: false
+  end
+
+  def advanced_search
+    render :search
   end
 
   # GET /creatures/1

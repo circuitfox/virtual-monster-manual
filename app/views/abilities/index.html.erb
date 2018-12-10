@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Abilities</h1>
 
@@ -15,8 +15,10 @@
       <tr>
         <td><%= ability.name %></td>
         <td><%= link_to 'Show', ability %></td>
-        <td><%= link_to 'Edit', edit_ability_path(ability) %></td>
-        <td><%= link_to 'Destroy', ability, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if admin? %>
+          <td><%= link_to 'Edit', edit_ability_path(ability) %></td>
+          <td><%= link_to 'Destroy', ability, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -2,6 +2,7 @@ require 'test_helper'
 
 class AbilitiesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    login_as users(:test_admin)
     @ability = abilities(:one)
     @creature = creatures(:zombie)
   end

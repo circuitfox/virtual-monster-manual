@@ -1,4 +1,6 @@
 class Spell < ApplicationRecord
+  include Searchable
+
   has_and_belongs_to_many :creatures
 
   validates :name, :description, presence: true

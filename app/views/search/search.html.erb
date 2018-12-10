@@ -1,0 +1,386 @@
+<h2> Advanced Search </h2>
+
+<%= form_with(url: "advanced_search") do |form| %>
+
+<div class="actions">
+    <%= form.submit "Search" %>
+    <%= link_to "Back", search_index_path %>
+</div>
+
+<input id="creature-collapse" class="toggle" type="checkbox" checked>
+<label for="creature-collapse"
+       class="toggle-label container collapse-header" 
+       tabindex=0>
+  <h3>Creature</h3>
+  <span class="collapse-note push-right"><%# filled by css %></span>
+</label>
+<div class="collapse-content">
+  <div class="collapse-inner collapse-singleton">
+    <%= form.fields_for :creatures do |f| %>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :type %>
+        <%= f.select :type, creature_types, { include_blank: true } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :subtype %>
+        <%= f.text_field :subtype %>
+      </div>
+
+      <div class="field">
+        <%= f.label :size %>
+        <%= f.select :size, creature_sizes, { include_blank: true } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :alignment %>
+        <%= f.text_field :alignment %>
+      </div>
+
+      <div class="field">
+        <%= f.label :ac %>
+        <%= f.text_field :ac %>
+      </div>
+
+      <div class="field">
+        <%= f.label :ac_type %>
+        <%= f.text_field :ac_type %>
+      </div>
+
+      <div class="field">
+        <%= f.label :hp %>
+        <%= f.number_field :hp %>
+      </div>
+
+      <div class="field">
+        <%= f.label :hp_dice %>
+        <%= f.text_field :hp_dice %>
+      </div>
+
+
+      <h3>Speed</h3>
+
+      <div class="fields-horizontal">
+        <div class="field-item flex-10">
+          <%= f.label :speed %>
+          <%= f.number_field :speed %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :swim %>
+          <%= f.number_field :swim %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :burrow %>
+          <%= f.number_field :burrow %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :climb %>
+          <%= f.number_field :climb %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :fly %>
+          <%= f.number_field :fly %>
+        </div>
+      </div>
+
+      <h3>Stats</h3>
+
+      <div class="fields-horizontal">
+        <div class="field-item flex-10">
+          <%= f.label :strength %>
+          <%= f.number_field :strength %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :dexterity %>
+          <%= f.number_field :dexterity %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :constitution %>
+          <%= f.number_field :constitution %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :intellect %>
+          <%= f.number_field :intellect %>
+        </div>
+
+        <div class="field-item flex-10">
+          <%= f.label :wisdom %>
+          <%= f.number_field :wisdom %>
+        </div>
+
+        <div class="field-item flex-10">
+          <%= f.label :charisma %>
+          <%= f.number_field :charisma %>
+        </div>
+      </div>
+
+      <h3>Saving Throws</h3>
+
+      <div class="fields-horizontal">
+        <div class="field-item flex-10">
+          <%= f.label :str_saving %>
+          <%= f.number_field :str_saving %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :dex_saving %>
+          <%= f.number_field :dex_saving %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :con_saving %>
+          <%= f.number_field :con_saving %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :int_saving %>
+          <%= f.number_field :int_saving %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :wis_saving %>
+          <%= f.number_field :wis_saving %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :chr_saving %>
+          <%= f.number_field :chr_saving %>
+        </div>
+      </div>
+
+      <h3>Senses</h3>
+
+      <div class="fields-horizontal">
+        <div class="field-item flex-10">
+          <%= f.label :perception %>
+          <%= f.number_field :perception %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :blindsight %>
+          <%= f.number_field :blindsight %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :darkvision %>
+          <%= f.number_field :darkvision %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :tremorsense %>
+          <%= f.number_field :tremorsense %>
+        </div>
+        <div class="field-item flex-10">
+          <%= f.label :truesight %>
+          <%= f.number_field :truesight %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label :challenge %>
+        <%= f.number_field :challenge %>
+      </div>
+    <% end%>
+  </div>
+</div>
+
+<input id="action-collapse" class="toggle" type="checkbox" checked>
+<label for="action-collapse"
+       class="toggle-label container collapse-header" 
+       tabindex=0>
+  <h3>Action</h3>
+  <span class="collapse-note push-right"><%# filled by css %></span>
+</label>
+<div class="collapse-content">
+  <div class="collapse-inner collapse-singleton">
+    <%= form.fields_for :creature_actions do |f| %>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :damage_dice %>
+        <%= f.text_field :damage_dice %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+      </div>
+
+      <div class="field">
+        <%= f.label :range %>
+        <%= f.number_field :range %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<input id="ability-collapse" class="toggle" type="checkbox" checked>
+<label for="ability-collapse"
+       class="toggle-label container collapse-header" 
+       tabindex=0>
+  <h3>Ability</h3>
+  <span class="collapse-note push-right"><%# filled by css %></span>
+</label>
+<div class="collapse-content">
+  <div class="collapse-inner collapse-singleton">
+    <%= form.fields_for :abilities do |f| %>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description, size: "30x5" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<input id="skill-collapse" class="toggle" type="checkbox" checked>
+<label for="skill-collapse"
+       class="toggle-label container collapse-header" 
+       tabindex=0>
+  <h3>Skill</h3>
+  <span class="collapse-note push-right"><%# filled by css %></span>
+</label>
+<div class="collapse-content">
+  <div class="collapse-inner collapse-singleton">
+    <%= form.fields_for :skills do |f| %>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :bonus %>
+        <%= f.number_field :bonus %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<input id="spell-collapse" class="toggle" type="checkbox" checked>
+<label for="spell-collapse"
+       class="toggle-label container collapse-header" 
+       tabindex=0>
+  <h3>Spell</h3>
+  <span class="collapse-note push-right"><%# filled by css %></span>
+</label>
+<div class="collapse-content">
+  <div class="collapse-inner collapse-singleton">
+    <%= form.fields_for :spells do |f| %>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description, size: "30x5" %>
+      </div>
+      <div class="field">
+        <%= f.label :dice %>
+        <%= f.text_field :dice %>
+      </div>
+
+      <div class="field">
+        <%= f.label :level %>
+        <%= f.number_field:level %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<input id="damage-resistance-collapse" class="toggle" type="checkbox" checked>
+<label for="damage-resistance-collapse"
+       class="toggle-label container collapse-header" 
+       tabindex=0>
+  <h3>Damage Resistance</h3>
+  <span class="collapse-note push-right"><%# filled by css %></span>
+</label>
+<div class="collapse-content">
+  <div class="collapse-inner collapse-singleton">
+    <%= form.fields_for :damage_resistances do |f| %>
+      <div class="field">
+        <%=f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<input id="damage-vulnerability-collapse" class="toggle" type="checkbox" checked>
+<label for="damage-vulnerability-collapse"
+       class="toggle-label container collapse-header" 
+       tabindex=0>
+  <h3>Damage Vulnerability</h3>
+  <span class="collapse-note push-right"><%# filled by css %></span>
+</label>
+<div class="collapse-content">
+  <div class="collapse-inner collapse-singleton">
+    <%= form.fields_for :damage_vulnerabilities do |f| %>
+      <div class="field">
+        <%=f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<input id="damage-immunity-collapse" class="toggle" type="checkbox" checked>
+<label for="damage-immunity-collapse"
+       class="toggle-label container collapse-header" 
+       tabindex=0>
+  <h3>Damage Immunity</h3>
+  <span class="collapse-note push-right"><%# filled by css %></span>
+</label>
+<div class="collapse-content">
+  <div class="collapse-inner collapse-singleton">
+    <%= form.fields_for :damage_immunities do |f| %>
+      <div class="field">
+        <%=f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<input id="condition-immunity-collapse" class="toggle" type="checkbox" checked>
+<label for="condition-immunity-collapse"
+       class="toggle-label container collapse-header" 
+       tabindex=0>
+  <h3>Condition Immunity</h3>
+  <span class="collapse-note push-right"><%# filled by css %></span>
+</label>
+<div class="collapse-content">
+  <div class="collapse-inner collapse-singleton">
+    <%= form.fields_for :condition_immunities do |f| %>
+      <div class="field">
+        <%=f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<input id="language-collapse" class="toggle" type="checkbox" checked>
+<label for="language-collapse"
+       class="toggle-label container collapse-header" 
+       tabindex=0>
+  <h3>Language</h3>
+  <span class="collapse-note push-right"><%# filled by css %></span>
+</label>
+<div class="collapse-content">
+  <div class="collapse-inner collapse-singleton">
+    <%= form.fields_for :languages do |f| %>
+      <div class="field">
+        <%=f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<% end %>

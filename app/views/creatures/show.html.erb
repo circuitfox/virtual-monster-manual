@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 <h2><%= @creature.name %></h2>
 <h3>
   <%= @creature.size.humanize %>
@@ -30,24 +30,32 @@
   <p>Fly: <%= @creature.fly %>ft.</p>
 <% end %>
 <h4>Stats</h4>
-<table class="stats">
-  <thead>
-    <th>Str</th>
-    <th>Dex</th>
-    <th>Con</th>
-    <th>Int</th>
-    <th>Wis</th>
-    <th>Chr</th>
-  </thead>
-  <tbody>
-    <td><%= @creature.strength %></td>
-    <td><%= @creature.dexterity %></td>
-    <td><%= @creature.constitution %></td>
-    <td><%= @creature.intellect %></td>
-    <td><%= @creature.wisdom %></td>
-    <td><%= @creature.charisma %></td>
-  </tbody>
-</table>
+<div class="container">
+  <div class="flex-5">
+    <p><strong>Str</strong></p>
+    <p><%= @creature.strength %></p>
+  </div>
+  <div class="flex-5">
+    <p><strong>Dex</strong></p>
+    <p><%= @creature.dexterity %></p>
+  </div>
+  <div class="flex-5">
+    <p><strong>Con</strong></p>
+    <p><%= @creature.constitution %></p>
+  </div>
+  <div class="flex-5">
+    <p><strong>Int</strong></p>
+    <p><%= @creature.intellect %></p>
+  </div>
+  <div class="flex-5">
+    <p><strong>Wis</strong></p>
+    <p><%= @creature.wisdom %></p>
+  </div>
+  <div class="flex-5">
+    <p><strong>Chr</strong></p>
+    <p><%= @creature.charisma %></p>
+  </div>
+</div>
 <% if @creature.saving_throws? %>
 <h4>Saving Throws</h4>
 <p>
@@ -72,7 +80,7 @@
 </p>
 <% end %>
 <p>
-  Senses: passive Perception: <%= @creature.perception %>
+  Senses: passive perception: <%= @creature.perception %>
   <% if @creature.blindsight? %>
     blindsight: <%= @creature.blindsight %>ft.
   <% end %>
@@ -87,6 +95,92 @@
   <% end %>
 </p>
 <p>Challenge: <%= @creature.challenge %> XP</p>
-
+<% if !@creature.creature_actions.empty? %>
+  <%= render layout: "show_container", locals: { model: "actions", id: @creature.id } do %>
+    <% for action in @creature.creature_actions do %>
+      <div class="collection-item">
+        <h4><%= action.name %></h4>
+        <p>Damage Dice: <%= action.damage_dice %></p>
+        <p>Range: <%= action.range %></p>
+        <p>Description: <%= action.description %></p>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<% if !@creature.abilities.empty? %>
+  <%= render layout: "show_container", locals: { model: "abilities", id: @creature.id } do %>
+    <% for ability in @creature.abilities do %>
+      <div class="collection-item">
+        <h4><%= ability.name %></h4>
+        <p>Description: <%= ability.description %></p>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<% if !@creature.skills.empty? %>
+  <%= render layout: "show_container", locals: { model: "skills", id: @creature.id } do %>
+    <% for skill in @creature.skills do %>
+      <div class="collection-item">
+        <p><%= skill.name %> +<%= skill.bonus %></p>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<% if !@creature.spells.empty? %>
+  <%= render layout: "show_container", locals: { model: "spells", id: @creature.id } do %>
+    <% for spell in @creature.spells do %>
+      <div class="collection-item" >
+        <h4><%= spell.name %> (level <%= spell.level %>)</h4>
+        <p>Description: <%= spell.description %></p>
+        <p>Dice: <%= spell.dice %></p>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<% if !@creature.languages.empty? %>
+  <%= render layout: "show_container", locals: { model: "languages", id: @creature.id } do %>
+    <% for language in @creature.languages %>
+      <div class="collection-item">
+        <p><%= language.name %></p>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<% if !@creature.damage_vulnerabilities.empty? %>
+  <%= render layout: "show_container", locals: { model: "damage_vulnerabilities", id: @creature.id } do %>
+    <% for damage_vulnerability in @creature.damage_vulnerabilities %>
+      <div class="collection-item">
+        <p><%= damage_vulnerability.name %></p>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<% if !@creature.damage_resistances.empty? %>
+  <%= render layout: "show_container", locals: { model: "damage_resistances", id: @creature.id } do %>
+    <% for damage_resistance in @creature.damage_resistances %>
+      <div class="collection-item">
+        <p><%= damage_resistance.name %></p>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<% if !@creature.damage_immunities.empty? %>
+  <%= render layout: "show_container", locals: { model: "damage_immunities", id: @creature.id } do %>
+    <% for damage_immunity in @creature.damage_immunities %>
+      <div class="collection-item">
+        <p><%= damage_immunity.name %></p>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<% if !@creature.condition_immunities.empty? %>
+  <%= render layout: "show_container", locals: { model: "condition_immunities", id: @creature.id } do %>
+    <% for condition_immunity in @creature.condition_immunities %>
+      <div class="collection-item">
+        <p><%= condition_immunity.name %></p>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
 <%= link_to 'Edit', edit_creature_path(@creature) %> |
 <%= link_to 'Back', creatures_path %>

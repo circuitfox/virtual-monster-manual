@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :password_reset, :reset]
   before_action :logged_in_user, only: [:edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
+  skip_before_action :authenticate, only: [:new, :create, :password_reset, :reset]
 
   def new
     @user = User.new
@@ -42,13 +43,40 @@ class UsersController < ApplicationController
     end
   end
 
+  def password_reset
+    if @user.password_reset?
+      render :password_reset
+    else
+      logger.debug "User exists but password_reset = false"
+      render file: "public/404.html", status: :not_found
+    end
+  end
+
+  def reset
+    if @user.password_reset?
+      if @user.update(reset_params)
+        session[:user_id] = @user.id
+        redirect_to root_url, notice: "Password reset"
+      else
+        render :password_reset
+      end
+    else
+      logger.debug "User exists but password_reset = false"
+      render file: "public/404.html", status: :not_found
+    end
+  end
+
   private
     def set_user
       @user = User.find(params[:id])
     end
 
     def user_params
-      params.require("user").permit(:name, :email, :password, :password_confirmation)
+      params.require("user").permit(:name, :email, :password, :password_confirmation, :password_reset)
+    end
+
+    def reset_params
+      params.require("user").permit(:password, :password_confirmation, :password_reset)
     end
 
     def logged_in_user

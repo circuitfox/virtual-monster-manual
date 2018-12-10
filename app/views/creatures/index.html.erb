@@ -1,27 +1,10 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Creatures</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @creatures.each do |creature| %>
-      <tr>
-        <td><%= creature.name %>
-        <td><%= link_to 'Show', creature %></td>
-        <td><%= link_to 'Edit', edit_creature_path(creature) %></td>
-        <td><%= link_to 'Destroy', creature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= link_to 'Advanced Search', creatures_search_url %><br>
+<%= link_to 'New Creature', new_creature_path %>
 
 <br>
 
-<%= link_to 'New Creature', new_creature_path %>
+<div class="creatures">
+  <%= render @creatures %>
+</div>

@@ -21,6 +21,7 @@
             <%= form.submit "Go", class: "addon-item" %>
           </div>
         <% end %></li>
+        <li><small><%= link_to "Advanced Search", search_path %></small></li>
         <!-- TODO: User model state stuff here -->
         <% if current_user %>
           <li class="push-right"><%= link_to current_user.name, current_user %></li>
