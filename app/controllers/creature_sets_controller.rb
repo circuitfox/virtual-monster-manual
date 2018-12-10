@@ -6,10 +6,6 @@ class CreatureSetsController < ApplicationController
   def index
     @creature_sets = CreatureSet.all
     @currentUser = current_user.id
-    @search_config ||= {
-      path: "/skills/search",
-      placeholder: "Search Skills"
-    }
   end
 
   # GET /creature_sets/1

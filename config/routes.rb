@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :creature_sets
   # root "creatures#index"
   root "landing#index"
 
@@ -19,6 +18,7 @@ Rails.application.routes.draw do
   get "creatures/search", to: "creatures#advanced_search"
   resources :creatures
   resources :creature_actions
+  resources :creature_sets
   resources :damage_immunities
   resources :damage_resistances
   resources :damage_vulnerabilities

@@ -3,6 +3,8 @@ require 'test_helper'
 class CreatureSetsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @creature_set = creature_sets(:one)
+    @user = users(:example)
+    login_as @user
   end
 
   test "should get index" do
@@ -17,7 +19,7 @@ class CreatureSetsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create creature_set" do
     assert_difference('CreatureSet.count') do
-      post creature_sets_url, params: { creature_set: {  } }
+      post creature_sets_url, params: { creature_set: {name:"Swamp Creatures", description:"Monsters for my swamp campaign"  } }
     end
 
     assert_redirected_to creature_set_url(CreatureSet.last)
@@ -34,7 +36,7 @@ class CreatureSetsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update creature_set" do
-    patch creature_set_url(@creature_set), params: { creature_set: {  } }
+    patch creature_set_url(@creature_set), params: { creature_set: {name:"No more Swamp monsters"  } }
     assert_redirected_to creature_set_url(@creature_set)
   end
 
