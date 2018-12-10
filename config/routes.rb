@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :creature_sets
-  root "creatures#index"
-=======
+  # root "creatures#index"
   root "landing#index"
->>>>>>> 30307b3063c2c33625235114459569e702901713
 
   get "signup", to: "users#new", as: "signup"
   get "login", to: "sessions#new", as: "login"

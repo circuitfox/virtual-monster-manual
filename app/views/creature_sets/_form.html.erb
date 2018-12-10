@@ -11,6 +11,21 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :name, "Name" %>
+    <%= form.text_field :name, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, "Description" %>
+    <%= form.text_field :description, required: true %>
+  </div>
+
+  <!-- <div class="field">
+    <%= form.label :creature_id, "Add a creature" %>
+    <%= form.collection_select(:creature_id, Creature.all, :id, :name) %>
+  </div> -->
+
   <div class="actions">
     <%= form.submit %>
   </div>

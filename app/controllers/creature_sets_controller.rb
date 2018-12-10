@@ -5,6 +5,11 @@ class CreatureSetsController < ApplicationController
   # GET /creature_sets.json
   def index
     @creature_sets = CreatureSet.all
+    @currentUser = current_user.id
+    @search_config ||= {
+      path: "/skills/search",
+      placeholder: "Search Skills"
+    }
   end
 
   # GET /creature_sets/1
@@ -24,7 +29,8 @@ class CreatureSetsController < ApplicationController
   # POST /creature_sets
   # POST /creature_sets.json
   def create
-    @creature_set = CreatureSet.new(creature_set_params)
+    # @creature_set = CreatureSet.new(creature_set_params)
+    @creature_set = current_user.creature_sets.new(creature_set_params)
 
     respond_to do |format|
       if @creature_set.save
@@ -69,6 +75,6 @@ class CreatureSetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def creature_set_params
-      params.fetch(:creature_set, {})
+      params.require(:creature_set).permit(:name, :description, :private)
     end
 end

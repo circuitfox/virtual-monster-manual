@@ -13,7 +13,7 @@
   <tbody>
     <% @creature_sets.each do |creature_set| %>
       <tr>
-        <td><%= creature_sets.name %></td>
+        <td><%= creature_set.name %></td>
         <td><%= link_to 'Show', creature_set %></td>
         <td><%= link_to 'Edit', edit_creature_set_path(creature_set) %></td>
         <td><%= link_to 'Destroy', creature_set, method: :delete, data: { confirm: 'Are you sure?' } %></td>

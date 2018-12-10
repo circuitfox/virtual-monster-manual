@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_11_18_200919) do
-=======
-ActiveRecord::Schema.define(version: 2018_11_15_221443) do
->>>>>>> 30307b3063c2c33625235114459569e702901713
 
   create_table "abilities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "creature_id"
@@ -52,6 +48,8 @@ ActiveRecord::Schema.define(version: 2018_11_15_221443) do
   create_table "creature_sets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name", null: false
+    t.boolean "private", default: false, null: false
+    t.string "description"
     t.index ["user_id"], name: "index_creature_sets_on_user_id"
   end
 
