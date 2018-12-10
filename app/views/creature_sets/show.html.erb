@@ -2,5 +2,8 @@
 
 <h2><%= @creature_set.name %><br /></h2>
 <h3><%= @creature_set.description %></h3>
+<% for creature in @creature_set.creatures %>
+  <p><%= link_to creature.name, creature %></p>
+<% end %>
 <%= link_to 'Edit', edit_creature_set_path(@creature_set) %> |
 <%= link_to 'Back', creature_sets_path %>

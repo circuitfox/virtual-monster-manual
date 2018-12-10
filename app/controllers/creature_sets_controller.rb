@@ -27,7 +27,14 @@ class CreatureSetsController < ApplicationController
   def create
     # @creature_set = CreatureSet.new(creature_set_params)
     @creature_set = current_user.creature_sets.new(creature_set_params)
-
+    logger.debug params.to_yaml
+    for creature_id in params[:creatures] do
+      if !creature_id.blank?
+        creature = Creature.find_by_id!(creature_id)
+        @creature_set.creatures << creature
+      end
+    end
+    
     respond_to do |format|
       if @creature_set.save
         format.html { redirect_to @creature_set, notice: 'Creature set was successfully created.' }
