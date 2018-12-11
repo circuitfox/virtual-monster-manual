@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # root "creatures#index"
   root "landing#index"
 
   get "signup", to: "users#new", as: "signup"
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   get "creatures/search", to: "creatures#advanced_search"
   resources :creatures
   resources :creature_actions
+  resources :creature_sets
   resources :damage_immunities
   resources :damage_resistances
   resources :damage_vulnerabilities

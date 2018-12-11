@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_15_221443) do
+ActiveRecord::Schema.define(version: 2018_11_18_200919) do
 
   create_table "abilities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "creature_id"
@@ -43,6 +43,21 @@ ActiveRecord::Schema.define(version: 2018_11_15_221443) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["creature_id"], name: "index_creature_actions_on_creature_id"
+  end
+
+  create_table "creature_sets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name", null: false
+    t.boolean "private", default: false, null: false
+    t.string "description"
+    t.index ["user_id"], name: "index_creature_sets_on_user_id"
+  end
+
+  create_table "creature_sets_creatures", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "creature_id"
+    t.bigint "creature_set_id"
+    t.index ["creature_id"], name: "index_creature_sets_creatures_on_creature_id"
+    t.index ["creature_set_id"], name: "index_on_creature_set"
   end
 
   create_table "creatures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -173,6 +188,9 @@ ActiveRecord::Schema.define(version: 2018_11_15_221443) do
   add_foreign_key "condition_immunities_creatures", "condition_immunities"
   add_foreign_key "condition_immunities_creatures", "creatures"
   add_foreign_key "creature_actions", "creatures"
+  add_foreign_key "creature_sets", "users"
+  add_foreign_key "creature_sets_creatures", "creature_sets"
+  add_foreign_key "creature_sets_creatures", "creatures"
   add_foreign_key "creatures_damage_immunities", "creatures"
   add_foreign_key "creatures_damage_immunities", "damage_immunities"
   add_foreign_key "creatures_damage_resistances", "creatures"

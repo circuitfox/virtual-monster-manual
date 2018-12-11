@@ -1,0 +1,4 @@
+creature_set_one:
+  name: Test Set
+  description: Test description of set
+  user: example

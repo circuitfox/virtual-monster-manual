@@ -1,0 +1,40 @@
+<%= form_with(model: creature_set, local: true) do |form| %>
+  <% if creature_set.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(creature_set.errors.count, "error") %> prohibited this creature_set from being saved:</h2>
+
+      <ul>
+      <% creature_set.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, "Name" %>
+    <%= form.text_field :name, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, "Description" %>
+    <%= form.text_field :description, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :private, "Private?" %>
+    <%= form.check_box :private%>
+  </div>
+
+  <div id="creatures">
+    <div class="field" id="first-creature">
+      <label for="creatures[]">Add a creature</label>
+      <%= form.collection_select("creatures", Creature.all, :id, :name, {include_blank: true}, { :multiple => true, name: "creatures[]" }) %>
+    </div>
+  <!-- js will append more copies of #first-id down here -->
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
