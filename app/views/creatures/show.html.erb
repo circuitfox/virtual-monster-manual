@@ -1,5 +1,5 @@
 
-<h2><%= @creature.name %></h2>
+<h2><%= @creature.name.titleize %></h2>
 <h3>
   <%= @creature.size.humanize %>
   <% if @creature.subtype? %>

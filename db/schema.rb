@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_18_200919) do
+ActiveRecord::Schema.define(version: 2018_12_11_144145) do
 
   create_table "abilities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "creature_id"
@@ -201,4 +201,16 @@ ActiveRecord::Schema.define(version: 2018_11_18_200919) do
   add_foreign_key "creatures_languages", "languages"
   add_foreign_key "creatures_spells", "creatures"
   add_foreign_key "creatures_spells", "spells"
+  create_trigger("creatures_before_insert_row_tr", :generated => true, :compatibility => 1).
+      on("creatures").
+      before(:insert) do
+    "SET NEW.name = LOWER(NEW.name);"
+  end
+
+  create_trigger("creatures_before_update_row_tr", :generated => true, :compatibility => 1).
+      on("creatures").
+      before(:update) do
+    "SET NEW.name = LOWER(NEW.name);"
+  end
+
 end

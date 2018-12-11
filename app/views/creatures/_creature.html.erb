@@ -3,7 +3,7 @@
   <label for="creature<%= creature.id %>-collapse"
          class="toggle-label container collapse-header" 
          tabindex=0>
-    <h2><%= creature.name %></h2>
+    <h2><%= creature.name.titleize %></h2>
     <div class="push-right">
       <% if admin? %>
         <%= link_to 'Show', creature_path(creature) %> |
