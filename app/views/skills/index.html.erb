@@ -14,7 +14,7 @@
   <tbody>
     <% @skills.each do |skill| %>
       <tr>
-        <td><%= skill.creature.name %>
+        <td><%= skill.creature.name.titleize %>
         <td><%= skill.name %>
         <td><%= link_to 'Show', skill %></td>
         <% if admin? %>

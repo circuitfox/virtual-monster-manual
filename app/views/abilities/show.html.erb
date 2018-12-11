@@ -1,6 +1,6 @@
 
 
-<h2><%= @ability.name %> (<%= @ability.creature.name %>)</h2>
+<h2><%= @ability.name %> (<%= @ability.creature.name.titleize %>)</h2>
 
 <p><%= @ability.description %></p>
 <%= link_to 'Edit', edit_ability_path(@ability) %> |

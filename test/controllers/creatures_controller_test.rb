@@ -41,7 +41,7 @@ class CreaturesControllerTest < ActionDispatch::IntegrationTest
     patch creature_url(@creature), params: { creature: update_creature }
     assert_redirected_to creature_url(@creature)
     @creature.reload
-    assert_equal("Greater Zombie", @creature.name)
+    assert_equal("greater zombie", @creature.name)
   end
 
   test "should destroy creature" do

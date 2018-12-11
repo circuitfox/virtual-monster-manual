@@ -1,6 +1,14 @@
 class Creature < ApplicationRecord
   include Searchable
 
+  trigger.before(:insert) do
+    "SET NEW.name = LOWER(NEW.name);"
+  end
+
+  trigger.before(:update) do
+    "SET NEW.name = LOWER(NEW.name);"
+  end
+
   # we're not going to use this, but it conflicts with the 'type'
   # column so we need to give it another name
   self.inheritance_column = 'inheritance_type'
