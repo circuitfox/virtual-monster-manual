@@ -19,7 +19,7 @@ class CreatureSetsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create creature_set" do
     assert_difference('CreatureSet.count') do
-      post creature_sets_url, params: { creature_set: {name:"Swamp Creatures", description:"Monsters for my swamp campaign"  }, creatures: "" }
+      post creature_sets_url, params: { creature_set: {name:"Swamp Creatures", description:"Monsters for my swamp campaign"  }, creatures: [] }
     end
 
     assert_redirected_to creature_set_url(CreatureSet.last)
