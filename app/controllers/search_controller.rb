@@ -38,7 +38,7 @@ class SearchController < ApplicationController
       :damage_immunities,
       :condition_immunities,
       :languages
-    ).where(sql, *data)
+    ).where(sql, *data).distinct
     j render :index, layout: false
   end
 
