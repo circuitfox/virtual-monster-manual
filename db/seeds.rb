@@ -5,12 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!(
+admin = User.create!(
   name: 'admin',
   email: 'admin@example.com',
   password: "adminpass",
   admin: true,
   password_reset: true
+)
+
+example = User.create!(
+  name: 'example',
+  email: 'example@example.com',
+  password: "examplepass",
+  admin: false,
+  password_reset: false
 )
 
 bulette = Creature.create(#1
@@ -534,7 +542,7 @@ CreatureAction.create(
 )
 
 will_o_wisp.languages.create(
-  name: 'the languaes it knew in life'
+  name: 'the languages it knew in life'
 )
 
 will_o_wisp.damage_immunities.create(
@@ -604,3 +612,34 @@ will_o_wisp.condition_immunities.create(
 will_o_wisp.condition_immunities.create(
   name: 'unconscious'
 )
+
+admin_set = admin.creature_sets.create(
+  name: "Admin's creatures",
+  description: "Just some creatures",
+  private: false
+);
+
+admin_private_set = admin.creature_sets.create(
+  name: "Admin's private creatures",
+  description: "Just some other creatures",
+  private: true
+);
+
+admin_set.creatures << bulette
+admin_set.creatures << mimic
+admin_set.creatures << will_o_wisp
+
+admin_private_set.creatures << troll
+admin_private_set.creatures << lich
+
+example_set = example.creature_sets.create(
+  name: "Example's creatures",
+  description: "All the creatures",
+  private: false
+)
+
+example_set.creatures << bulette
+example_set.creatures << mimic
+example_set.creatures << will_o_wisp
+example_set.creatures << troll
+example_set.creatures << lich

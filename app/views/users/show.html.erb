@@ -1,5 +1,22 @@
+<% @creature_sets = @user.creature_sets %>
 <h1><%= @user.name %></h1>
+
+<h2>Creature Sets</h2>
+
+<% for creature_set in @creature_sets %>
+  <% if !creature_set.private %>
+    <p><%= link_to creature_set.name, creature_set %></p>
+  <% end %>
+<% end %>
+
 <% if current_user == @user %>
+  <h2>Private Creature Sets</h2>
+  <% for creature_set in @creature_sets %>
+    <% if creature_set.private %>
+      <p><%= link_to creature_set.name, creature_set %></p>
+    <% end %>
+  <% end %>
+  
   <div>
     <%= link_to "Edit", edit_user_path(@user) %> |
     <%= link_to "Delete", @user, method: :delete, data: {
