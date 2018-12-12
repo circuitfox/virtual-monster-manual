@@ -5,5 +5,8 @@
 <% for creature in @creature_set.creatures %>
   <p><%= link_to creature.name.titleize, creature %></p>
 <% end %>
-<%= link_to 'Edit', edit_creature_set_path(@creature_set) %> |
+
+<% if current_user == @creature_set.user %>
+  <%= link_to 'Edit', edit_creature_set_path(@creature_set) %> |
+<% end %>
 <%= link_to 'Back', creature_sets_path %>
