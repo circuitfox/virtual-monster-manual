@@ -52,3 +52,14 @@ class CreaturesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to creatures_url
   end
 end
+test "search method is available" do
+  assert CreaturesController.repond_to?(:search)
+end
+test "should search" do
+  assert_equal 0, CreaturesController.search("creatures").size
+  assert_equal 1, CreaturesController.search("skills").size
+  assert_equal 2, CreaturesController.search("spells").size
+  assert_equal 3, CreaturesController.search("actions").size
+  assert_equal 4, CreaturesController.search("abilities").size
+
+end
